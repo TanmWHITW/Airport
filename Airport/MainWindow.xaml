@@ -6,9 +6,14 @@
         xmlns:local="clr-namespace:Airport"
         mc:Ignorable="d"
         WindowStyle="None"
+        AllowsTransparency="True"
         Icon="Images/airplane_512.png"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Border>
+        <TextBlock HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"
+                   Text="Аээээропорт!" 
+                   FontFamily="{StaticResource MontserratBold}" 
+                   FontSize="30"/>
+    </Border>
 </Window>
