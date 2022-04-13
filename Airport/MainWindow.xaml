@@ -8,12 +8,18 @@
         WindowStyle="None"
         AllowsTransparency="True"
         Icon="Images/airplane_512.png"
-        Title="MainWindow" Height="450" Width="800">
-    <Border>
-        <TextBlock HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"
-                   Text="Аээээропорт!" 
-                   FontFamily="{StaticResource MontserratBold}" 
-                   FontSize="30"/>
+        Title="Airport" Height="600" Width="1200">
+    <Border Background="DeepSkyBlue">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/airport-background-white-40.png" />
+        </Grid.Background>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" FontSize="240" Text="87" FontFamily="{StaticResource MontserratBold}" Margin="0 -40"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="30" Text="млрд раз" FontFamily="{StaticResource MontserratBold}" />
+            </StackPanel>
+
+        </Grid>
     </Border>
 </Window>
