@@ -66,6 +66,8 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Compile Include="Window\WindowResizer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,7 +135,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\airplane_512.png" />
+    <Resource Include="Images\airplane-512.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\airplane.ico" />

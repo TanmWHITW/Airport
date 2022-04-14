@@ -1,6 +1,11 @@
 ﻿using PropertyChanged;
 using System.ComponentModel;
 
+/// <summary>
+/// Can write test cases already
+/// TO DO: not done!
+/// </summary>
+
 namespace Airport
 {
     /// <summary>

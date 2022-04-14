@@ -7,19 +7,144 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
-        Icon="Images/airplane_512.png"
-        Title="Airport" Height="600" Width="1200">
-    <Border Background="DeepSkyBlue">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/airport-background-white-40.png" />
+        WindowStartupLocation="CenterScreen"
+        x:Name="AppWindow"
+        Title="A I R P O R T" 
+        Height="600" 
+        Width="1100"
+        MinHeight="{Binding WindowMinimumHeight}"
+        MinWidth="{Binding WindowMinimumWidth}"
+        >
+
+    <Window.Resources>
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                            
+                            <Grid>
+                                
+                                <Border x:Name="Container"
+                                         Background="{StaticResource ForegroundMainBrush}"
+                                         CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                                         />
+                                
+                                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                                        Background="{StaticResource ForegroundMainBrush}"
+                                        >
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="0.2" />
+                                    </Border.Effect>
+                                </Border>
+
+                                <Grid>
+                                    <Grid.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Container}" />
+                                    </Grid.OpacityMask>
+                                    
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Row="0"
+                                          Panel.ZIndex="2"
+                                          >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button Grid.Column="0" 
+                                                Style="{StaticResource SystemIcon}"
+                                                Command="{Binding MenuCommand}">
+                                            <Image Source="/Images/airplane-512.png" />
+                                        </Button>
+
+                                        <Viewbox Grid.Column="0"
+                                                 Grid.ColumnSpan="3"
+                                                 Margin="0 -2">
+                                            <TextBlock Style="{StaticResource HeaderText}" 
+                                                       Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='AIRPORT'}"
+                                                       />
+                                        </Viewbox>
+
+                                        <StackPanel Grid.Column="2"
+                                                    Orientation="Horizontal">
+                                            <Button Style="{StaticResource WindowControlButton}"
+                                                    
+                                                    Command="{Binding MinimizeCommand}"
+                                                    Content="&#128469;" 
+                                                    />
+                                            <Button Style="{StaticResource WindowControlButton}"
+                                                    Command="{Binding MaximizeCommand}"
+                                                    Content="&#128470;" 
+                                                    />
+                                            <Button Style="{StaticResource WindowCloseButton}"
+                                                    Command="{Binding CloseCommand}"
+                                                    Content="&#9587;" 
+                                                    />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Border Grid.Row="1"
+                                            Height="6"
+                                            BorderThickness="0.2"
+                                            Panel.ZIndex="1"
+                                            >
+                                        <Border.BorderBrush>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                <GradientStop Color="{StaticResource MainBlue}" Offset="0.0" />
+                                                <GradientStop Color="{StaticResource MainBlueDark}" Offset="0.5" />
+                                                <GradientStop Color="{StaticResource MainBlue}" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </Border.BorderBrush>
+                                        
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0, 1">
+                                                <GradientStop Color="{StaticResource MainBlueDark}" Offset="0.0" />
+                                                <GradientStop Color="{StaticResource MainBlue}" Offset="1.0" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                    </Border>
+
+                                    <Border Grid.Row="1"
+                                            Grid.RowSpan="2"
+                                            Background="{StaticResource MainBlueBrush}">
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </Border>
+                                    
+                                </Grid>
+                                
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            ResizeBorderThickness="{Binding ResizeBorderThickness}"
+            CaptionHeight="{Binding TitleHeight}"
+            CornerRadius="0"
+            GlassFrameThickness="0"
+            />
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 450 450" ImageSource="/Images/Backgrounds/airport-background-white-40.png" />
         </Grid.Background>
 
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock HorizontalAlignment="Center" FontSize="240" Text="87" FontFamily="{StaticResource MontserratBold}" Margin="0 -40"/>
-                <TextBlock HorizontalAlignment="Center" FontSize="30" Text="млрд раз" FontFamily="{StaticResource MontserratBold}" />
-            </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" FontSize="180" Text="87" FontFamily="{StaticResource MontserratBold}" Margin="0 -40"/>
+            <TextBlock HorizontalAlignment="Center" FontSize="24" Text="млрд раз" FontFamily="{StaticResource MontserratBold}" />
+        </StackPanel>
+    </Grid>
 
-        </Grid>
-    </Border>
 </Window>
