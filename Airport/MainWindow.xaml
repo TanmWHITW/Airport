@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen"
         x:Name="AppWindow"
         Title="A I R P O R T" 
-        Height="600" 
+        Height="800" 
         Width="1100"
         MinHeight="{Binding WindowMinimumHeight}"
         MinWidth="{Binding WindowMinimumWidth}"
@@ -69,6 +69,7 @@
                                                  Margin="0 -2">
                                             <TextBlock Style="{StaticResource HeaderText}" 
                                                        Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='AIRPORT'}"
+                                                       Foreground="{StaticResource ForegroundGreyDarkBrush}"
                                                        />
                                         </Viewbox>
 
@@ -116,7 +117,7 @@
                                             Background="{StaticResource MainBlueBrush}">
                                         <ContentPresenter Content="{TemplateBinding Content}" />
                                     </Border>
-                                    
+ 
                                 </Grid>
                                 
                             </Grid>
@@ -138,12 +139,15 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 450 450" ImageSource="/Images/Backgrounds/airport-background-white-40.png" />
+            <ImageBrush ImageSource="/Images/Backgrounds/plane-background_2.png" Stretch="None"/>
         </Grid.Background>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" FontSize="180" Text="87" FontFamily="{StaticResource MontserratBold}" Margin="0 -40"/>
-            <TextBlock HorizontalAlignment="Center" FontSize="24" Text="млрд раз" FontFamily="{StaticResource MontserratBold}" />
+            <TextBlock HorizontalAlignment="Center" Foreground="{StaticResource ForegroundGreyDarkBrush}" FontSize="240" Text="323" FontFamily="{StaticResource MontserratBold}" Margin="0 -40"/>
+            <TextBlock HorizontalAlignment="Center" FontSize="24" Text="million flights were looked through" FontFamily="{StaticResource MontserratBold}" />
+            <TextBlock HorizontalAlignment="Center" FontSize="24" Text="Try and you! &#x21FE;" FontFamily="{StaticResource MontserratBold}" Margin="0 20 0 0"/>
+
+            <Button Content="Test, 0 styles" Height="50" Width="120" Margin="20"  Style="{StaticResource BaseStyle}" Background="{StaticResource MainYellowBrush}"/>
         </StackPanel>
     </Grid>
 

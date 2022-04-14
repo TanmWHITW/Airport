@@ -38,7 +38,7 @@
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Padding" Value="10 0" />
-        <Setter Property="Foreground" Value="{StaticResource ForegroundBlackBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGreyDarkBrush}" />
 
         <Setter Property="Template">
             <Setter.Value>

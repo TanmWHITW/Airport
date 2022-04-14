@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:Airport">
 
     <Style TargetType="{x:Type TextBlock}" x:Key="HeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundBlackBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource ForegroundGreyDarkBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0 5" />
