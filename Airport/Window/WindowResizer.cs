@@ -127,7 +127,7 @@ namespace Airport
             var source = PresentationSource.FromVisual(mWindow);
 
             // Reset the transform to default
-            mTransformToDevice = default(Matrix);
+            mTransformToDevice = default;
 
             // If we cannot get the source, ignore
             if (source == null)
@@ -168,7 +168,7 @@ namespace Airport
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // We cannot find positioning until the window transform has been established
-            if (mTransformToDevice == default(Matrix))
+            if (mTransformToDevice == default)
                 return;
 
             // Get the WPF size
@@ -191,7 +191,7 @@ namespace Airport
             var edgedRight = windowBottomRight.X >= (mScreenSize.Right - mEdgeTolerance);
 
             // Get docked position
-            var dock = WindowDockPosition.Undocked;
+            WindowDockPosition dock;
 
             // Left docking
             if (edgedTop && edgedBottom && edgedLeft)
@@ -249,8 +249,7 @@ namespace Airport
         private void WmGetMinMaxInfo(System.IntPtr hwnd, System.IntPtr lParam)
         {
             // Get the point position to determine what screen we are on
-            POINT lMousePosition;
-            GetCursorPos(out lMousePosition);
+            GetCursorPos(out POINT lMousePosition);
 
             // Get the primary monitor at cursor position 0,0
             var lPrimaryScreen = MonitorFromPoint(new POINT(0, 0), MonitorOptions.MONITOR_DEFAULTTOPRIMARY);
@@ -264,7 +263,7 @@ namespace Airport
             var lCurrentScreen = MonitorFromPoint(lMousePosition, MonitorOptions.MONITOR_DEFAULTTONEAREST);
 
             // If this has changed from the last one, update the transform
-            if (lCurrentScreen != mLastScreen || mTransformToDevice == default(Matrix))
+            if (lCurrentScreen != mLastScreen || mTransformToDevice == default)
                 GetTransform();
 
             // Store last know screen
