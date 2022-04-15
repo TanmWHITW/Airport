@@ -7,8 +7,11 @@ namespace Airport
     /// <summary>
     /// A base page for all pages to gain base functionality
     /// </summary>
-    public class BasePage : Page
+    public class BasePage<VM> : Page
+        where VM: BaseViewModel, new()
     {
+        private VM mViewModel;
+
         #region Public Properties
 
         /// <summary>
@@ -26,6 +29,19 @@ namespace Airport
         /// </summary>
         public float SlideSeconds { get; set; } = 0.8f;
 
+        public VM ViewModel
+        {
+            get { return ViewModel; }
+            set
+            {
+                if (mViewModel == value)
+                    return;
+                mViewModel = value;
+
+                this.DataContext = mViewModel;
+            }
+        }
+
         #endregion
 
         #region Constructor
@@ -41,6 +57,8 @@ namespace Airport
 
             // Listen out for the page loading
             this.Loaded += BasePage_Loaded;
+
+            this.ViewModel = new VM();
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿<local:BasePage x:Class="Airport.LoginPage"
+﻿<local:BasePage x:TypeArguments="local:LoginViewModel" x:Class="Airport.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,8 +9,8 @@
       Title="LoginPage">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                      HorizontalScrollBarVisibility="Hidden">
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         TextBlock.TextAlignment="Center">
@@ -33,12 +33,13 @@
                                        />
 
 
-                        <TextBox Tag="Логин" Margin="0 10 0 0"/>
-                        <TextBox Tag="Ключ" Margin="0 10 0 10"/>
+                        <TextBox Text="{Binding Username}" Tag="Логин" Margin="0 10 0 0"/>
+                        <TextBox Text="{Binding Key}" Tag="Ключ" Margin="0 10 0 10"/>
 
                         <Button Content="Войти" 
                                 HorizontalAlignment="Center"
-                                Margin="0 30 0 20"/>
+                                Margin="0 30 0 20"
+                                Command="{Binding LoginCommand}"/>
 
                     </StackPanel>
                 </Border>
