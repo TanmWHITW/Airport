@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Airport
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для UserFlightsControl.xaml
     /// </summary>
-    public partial class LoginPage : BasePage<LoginViewModel>
+    public partial class UserEnvironmentControl : UserControl
     {
-        public LoginPage()
+        public UserEnvironmentControl()
         {
             InitializeComponent();
         }

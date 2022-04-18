@@ -2,6 +2,9 @@
 {
     public enum ApplicationPage
     {
-        Login = 1,
+        UserLogin = 0,
+        AdminLogin = 1,
+        UserFlights = 2,
+        AdminFlights = 3,
     }
 }

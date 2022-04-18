@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 
 /// <summary>
@@ -17,7 +11,7 @@ namespace Airport
     /// <summary>
     /// The View Model for the custom flat window
     /// </summary>
-    public class LoginViewModel : BaseViewModel
+    public class AdminLoginViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -31,6 +25,11 @@ namespace Airport
         /// </summary>
         public string Key { get; set; }
 
+        /// <summary>
+        /// A flag indicating if the login command is running
+        /// </summary>
+        public bool AdminLoginIsRunning { get; set; }
+
         #endregion
 
         #region Commands
@@ -38,7 +37,7 @@ namespace Airport
         /// <summary>
         /// The command to login
         /// </summary>
-        public ICommand LoginCommand { get; set; }
+        public ICommand AdminLoginCommand { get; set; }
 
         #endregion
 
@@ -47,12 +46,10 @@ namespace Airport
         /// <summary>
         /// Default constructor
         /// </summary>
-        public LoginViewModel()
+        public AdminLoginViewModel()
         {
-
-
             // Create commands
-            LoginCommand = new RelayCommand(async () => await Login());
+            AdminLoginCommand = new RelayCommand(async () => await AdminLogin());
         }
 
         #endregion
@@ -62,12 +59,15 @@ namespace Airport
         /// </summary>
         /// <param name="parameter">The <see cref="SecureString"/> passed in from the view for the users password</param>
         /// <returns></returns>
-        public async Task Login()
+        public async Task AdminLogin()
         {
+            await RunCommand(() => AdminLoginIsRunning, async () =>
+            {
                 await Task.Delay(5000);
 
                 var username = this.Username;
                 var key = this.Key;
+            });
         }
     }
 }

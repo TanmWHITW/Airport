@@ -1,0 +1,27 @@
+﻿<local:BasePage x:TypeArguments="local:UserFlightsViewModel" x:Class="Airport.UserFlightsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Airport"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserFlightsPage">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="..." 
+                   FontFamily="{StaticResource MontserratBold}"
+                   Foreground="{StaticResource ForegroundGreyDarkBrush}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="100"
+                   Margin="0 65 0 40"/>
+
+        <local:UserEnvironmentControl Grid.Row="1"/>
+    </Grid>
+</local:BasePage>

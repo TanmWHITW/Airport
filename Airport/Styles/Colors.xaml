@@ -19,6 +19,9 @@
     <Color x:Key="MainYellow">#ffc500</Color>
     <SolidColorBrush x:Key="MainYellowBrush" Color="{StaticResource MainYellow}" />
 
+    <Color x:Key="LighterYellow">#ffd133</Color>
+    <SolidColorBrush x:Key="LighterYellowBrush" Color="{StaticResource LighterYellow}" />
+    
     <Color x:Key="MainRed">#ff003b</Color>
     <SolidColorBrush x:Key="MainRedBrush" Color="{StaticResource MainRed}" />
     

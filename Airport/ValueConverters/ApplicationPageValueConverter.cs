@@ -10,8 +10,14 @@ namespace Airport
         {
             switch((ApplicationPage)value)
             {
-                case ApplicationPage.Login:
-                    return new LoginPage();
+                case ApplicationPage.UserLogin:
+                    return new UserLoginPage();
+
+                case ApplicationPage.AdminLogin:
+                    return new AdminLoginPage();
+
+                case ApplicationPage.UserFlights:
+                    return new UserFlightsPage();
 
                 default:
                     Debugger.Break();

@@ -29,15 +29,22 @@ namespace Airport
         /// </summary>
         public float SlideSeconds { get; set; } = 0.8f;
 
+        /// <summary>
+        /// The View Model associated with this page
+        /// </summary>
         public VM ViewModel
         {
-            get { return ViewModel; }
+            get { return mViewModel; }
             set
             {
+                // If nothing has changed, return
                 if (mViewModel == value)
                     return;
-                mViewModel = value;
 
+                // Update the value
+                mViewModel = value;
+                    
+                // Set the data context for this page
                 this.DataContext = mViewModel;
             }
         }
