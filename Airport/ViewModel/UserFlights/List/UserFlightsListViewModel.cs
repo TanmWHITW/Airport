@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Airport
 {
     public class UserFlightsListViewModel: BaseViewModel
     {
-        public List<UserFlightsItemViewModel> Items { get; set; }
+        public ObservableCollection<UserFlightsItemViewModel> Items { get; set; }
     }
 }
