@@ -134,9 +134,10 @@
                                                          Canvas.Top="30"
                                                          Canvas.Left="114"
                                                          />
-
+                                                
                                             </Canvas>
-
+                                            
+                                            
                                         </Border>
 
                                         <StackPanel Grid.Column="2"

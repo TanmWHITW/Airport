@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +12,7 @@ namespace Airport
 
         public UserFlightsListDesignModel()
         {
-            Items = new ObservableCollection<UserFlightsItemViewModel>
+            Items = new List<UserFlightsItemViewModel>
             {
                 new UserFlightsItemViewModel()
                 {

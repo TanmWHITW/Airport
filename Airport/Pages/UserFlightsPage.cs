@@ -18,7 +18,7 @@ namespace Airport
     /// <summary>
     /// Логика взаимодействия для LoginPage.xaml
     /// </summary>
-    public partial class UserFlightsPage : BasePage<UserFlightsListViewModel>
+    public partial class UserFlightsPage : BasePage<UserFlightsViewModel>
     {
         public UserFlightsPage()
         {
