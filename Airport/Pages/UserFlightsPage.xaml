@@ -35,13 +35,13 @@
                 <Border Margin="0 10 0 40">
                     <TextBox Style="{StaticResource SearchTextBox}" 
                              Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                             Tag="Поиск..." HorizontalAlignment="Stretch"
+                             Tag="Поиск по рейсу..." HorizontalAlignment="Stretch"
                              >
                         <TextBox.InputBindings>
                             <!-- Clear text on Esc -->
                             <KeyBinding Command="{Binding ClearSearchCommand}" Key="Esc" />
                             <!-- Search on enter -->
-                            <KeyBinding Command="{Binding SearchCommand}" Key="Return" />
+                            <KeyBinding Command="{Binding SearchFlightIdCommand}" Key="Return" />
                         </TextBox.InputBindings>
                     </TextBox>
                 </Border>
@@ -51,18 +51,22 @@
                         HorizontalAlignment="Left">
 
                     <TextBlock Text="Список полетов на "
-                       FontSize="{StaticResource FontSizeXL}"
-                       FontFamily="{StaticResource MontserratBold}"
-                       Foreground="{StaticResource ForegroundGreyDarkBrush}"/>
-                    <TextBox Tag="00" Style="{StaticResource Date}"/>
+                               FontSize="{StaticResource FontSizeXL}"
+                               FontFamily="{StaticResource MontserratBold}"
+                               Foreground="{StaticResource ForegroundGreyDarkBrush}"/>
+                    <TextBox Tag="{Binding TodayDay}" 
+                             Style="{StaticResource Date}"
+                             Text="{Binding SearchDay, UpdateSourceTrigger=PropertyChanged}"/>
                     <TextBlock Text="/"
-                       FontSize="{StaticResource FontSizeXL}"
-                       FontFamily="{StaticResource MontserratBold}"
-                       Foreground="{StaticResource ForegroundGreyDarkBrush}"
-                       HorizontalAlignment="Center"/>
-                    <TextBox Tag="00" Style="{StaticResource Date}"/>
-                    <Button Content="&#8921;"
-                            Command="{Binding SendCommand}"
+                               FontSize="{StaticResource FontSizeXL}"
+                               FontFamily="{StaticResource MontserratBold}"
+                               Foreground="{StaticResource ForegroundGreyDarkBrush}"
+                               HorizontalAlignment="Center"/>
+                    <TextBox Tag="{Binding TodayMonth}" 
+                             Style="{StaticResource Date}"
+                             Text="{Binding SearchMonth, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Content=" ..."
+                            Command="{Binding SearchFlightDateCommand}"
                             Style="{StaticResource TextButtonSearch}"/>
                 </StackPanel>
                 <TextBlock Text="Летайте с удовольствием!"
@@ -75,11 +79,24 @@
 
         </Border>
 
-        <Button Content="Рейс" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="0" Margin="0 0 0 10"/>
-        <Button Content="Самолет" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="1" />
-        <Button Content="Город отправления" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="2" />
-        <Button Content="Информация" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="3" />
-        <Button Content="Город прибытия" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="4" />
+        <Button Content="Рейс" 
+                Style="{StaticResource TextButtonSort}" 
+                Grid.Row="1" 
+                Grid.Column="0" 
+                Margin="0 0 0 10"/>
+        <Button Content="Самолет" 
+                Style="{StaticResource TextButtonSort}" 
+                Grid.Row="1" 
+                Grid.Column="1" />
+        <Button Content="Отправление" 
+                Style="{StaticResource TextButtonSort}" 
+                Grid.Row="1" 
+                Grid.Column="2" />
+        <Button Content="Информация" 
+                Style="{StaticResource TextButtonSort}" 
+                Grid.Row="1" 
+                Grid.Column="3" />
+        <Button Content="Прибытие" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="4" />
         <Button Content="Пассажиры" Style="{StaticResource TextButtonSort}" Grid.Row="1" Grid.Column="5" />
 
         <local:UserFlightsListControl 

@@ -100,7 +100,7 @@
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding DepartureDateTime}" 
+                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>
@@ -146,7 +146,7 @@
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding ArrivalDateTime}" 
+                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>

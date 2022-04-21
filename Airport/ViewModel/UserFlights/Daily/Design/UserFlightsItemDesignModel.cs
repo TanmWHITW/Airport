@@ -1,4 +1,6 @@
-﻿namespace Airport
+﻿using System;
+
+namespace Airport
 {
     public class UserFlightsItemDesignModel : UserFlightsItemViewModel
     {
@@ -11,11 +13,11 @@
 
             DepartureCity = "Москва";
             DepartureAirport = "SVO";
-            DepartureDateTime = "12:00";
+            DepartureDateTime = DateTime.UtcNow;
 
             ArrivalCity = "Санкт-Петербург";
             ArrivalAirport = "LED";
-            ArrivalDateTime = "14:00";
+            ArrivalDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromDays(1.3));
 
             Passengers = 28;
         }
