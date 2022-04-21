@@ -220,6 +220,10 @@ namespace Airport
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => 
                                                                                                item.FlightDateDDMM.Month.Equals(Int32.Parse(SearchMonth))
                                                                                             && item.FlightDateDDMM.Day.Equals(Int32.Parse(SearchDay))));
+
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
+                                                                                               item.FlightDateDDMM.Month.Equals(Int32.Parse(SearchMonth))
+                                                                                            && item.FlightDateDDMM.Day.Equals(Int32.Parse(SearchDay))));
             // Set last search day
             mLastSearchDay = SearchDay;
 
