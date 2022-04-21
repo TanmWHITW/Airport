@@ -42,7 +42,7 @@ namespace Airport
         /// <summary>
         /// The smallest width the window can go to
         /// </summary>
-        public double WindowMinimumWidth { get; set; } = 420;
+        public double WindowMinimumWidth { get; set; } = 1100;
 
         /// <summary>
         /// The smallest height the window can go to

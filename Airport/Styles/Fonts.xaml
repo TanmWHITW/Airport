@@ -33,6 +33,6 @@
     <system:Double x:Key="FontSizeRegular">18</system:Double>
     <system:Double x:Key="FontSizeMedium">24</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
-    <system:Double x:Key="FontSizeXXL">240</system:Double>
+    <system:Double x:Key="FontSizeXL">50</system:Double>
 
 </ResourceDictionary>

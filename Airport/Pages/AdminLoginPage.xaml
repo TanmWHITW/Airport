@@ -33,8 +33,8 @@
                                        />
 
 
-                        <TextBox Text="{Binding Username}" Tag="Логин" Margin="0 10 0 0"/>
-                        <TextBox Text="{Binding Key}" Tag="Ключ" Margin="0 10 0 10"/>
+                        <TextBox Text="{Binding Username}" Style="{StaticResource AutorizationTextBox}" Tag="Логин" Margin="0 10 0 0"/>
+                        <TextBox Text="{Binding Key}" Style="{StaticResource AutorizationTextBox}" Tag="Ключ" Margin="0 10 0 10"/>
 
                         <Button Content="Войти" 
                                 HorizontalAlignment="Center"
