@@ -166,9 +166,10 @@ namespace Airport
         {
             // Make sure we don't re-search the same text
             if ((string.IsNullOrEmpty(mLastSearchText) && string.IsNullOrEmpty(SearchText)) ||
-                string.Equals(mLastSearchText, SearchText)&&((string.IsNullOrEmpty(mLastSearchDay) && string.IsNullOrEmpty(SearchDay))) && ((string.IsNullOrEmpty(mLastSearchMonth) && string.IsNullOrEmpty(SearchMonth))) ||
-                ((string.Equals(mLastSearchDay, SearchDay)) &&
-                (string.Equals(mLastSearchMonth, SearchMonth))))
+                string.Equals(mLastSearchText, SearchText)&&
+                (((string.IsNullOrEmpty(mLastSearchDay) && string.IsNullOrEmpty(SearchDay))) || 
+                ((string.IsNullOrEmpty(mLastSearchMonth) && string.IsNullOrEmpty(SearchMonth))) &&
+                ((string.Equals(mLastSearchDay, SearchDay)) && (string.Equals(mLastSearchMonth, SearchMonth)))))
                 return;
 
             // If we have no search text, or no items
