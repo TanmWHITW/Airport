@@ -7,8 +7,6 @@ namespace Airport
     {
         public string Id { get; set; }
 
-        public DateTimeOffset FlightDateDDMM { get; set; }
-
         public string Plane { get; set; }
 
         public string DepartureCity { get; set; }

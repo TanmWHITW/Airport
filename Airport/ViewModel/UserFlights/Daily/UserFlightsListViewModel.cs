@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Airport
 {
-    public class UserFlightsListViewModel: BaseViewModel
+    public class UserFlightsListViewModel : BaseViewModel
     {
 
         #region Protected Members
@@ -89,10 +89,6 @@ namespace Airport
                 // Update value
                 mSearchText = value;
 
-                // If the search text is empty...
-                if (string.IsNullOrEmpty(SearchText))
-                    // Search to restore messages
-                    SearchFlightId();
             }
         }
 
@@ -199,7 +195,7 @@ namespace Airport
             if (string.IsNullOrEmpty(SearchText) || Items == null || Items.Count() <= 0)
             {
                 // Make filtered list the same
-                
+
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
 
                 // Set last search text
@@ -239,7 +235,7 @@ namespace Airport
                 return;
             }
             // Find all items that contain the chosen Date
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => 
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
                                                                                                item.DepartureDateTime.Month.Equals(Int32.Parse(SearchMonth))
                                                                                             && item.DepartureDateTime.Day.Equals(Int32.Parse(SearchDay))));
             // Set last search day
@@ -266,16 +262,16 @@ namespace Airport
         private void LoadData(string path)
         {
             if (File.Exists(path))
+            {
                 Items = JsonConvert.DeserializeObject<ObservableCollection<UserFlightsItemViewModel>>(File.ReadAllText(path));
-                
-            Items = new ObservableCollection<UserFlightsItemViewModel>(Items.OrderBy(o => o.Id));
+                Items = new ObservableCollection<UserFlightsItemViewModel>(Items.OrderBy(o => o.Id));
+            }
         }
 
         private void SetTodayFlights(string day, string month)
         {
-            if((!string.IsNullOrEmpty(day) || !string.IsNullOrEmpty(month)))
+            if ((!string.IsNullOrEmpty(day) || !string.IsNullOrEmpty(month)))
             {
-
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
                                                                                                item.DepartureDateTime.Month.Equals(Int32.Parse(TodayMonth))
                                                                                             && item.DepartureDateTime.Day.Equals(Int32.Parse(TodayDay))));
