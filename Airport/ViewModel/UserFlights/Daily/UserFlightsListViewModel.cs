@@ -146,6 +146,13 @@ namespace Airport
         public ICommand SearchFlightIdCommand { get; set; }
         public ICommand ClearSearchCommand { get; set; }
         public ICommand SearchFlightDateCommand { get; set; }
+        public ICommand SortIdCommand { get; set; }
+        public ICommand SortPlaneCommand { get; set; }
+        public ICommand SortDepartureDateCommand { get; set; }
+        public ICommand SortArrivalCityCommand { get; set; }
+        public ICommand SortPassengersCommand { get; set; }
+
+
 
         public UserFlightsListViewModel()
         {
@@ -153,6 +160,10 @@ namespace Airport
             SearchFlightIdCommand = new RelayCommand(SearchFlightId);
             ClearSearchCommand = new RelayCommand(ClearSearch);
             SearchFlightDateCommand = new RelayCommand(SearchFlightDate);
+            SortIdCommand = new RelayCommand(SortId);
+            SortPlaneCommand = new RelayCommand(SortPlane);
+            SortDepartureDateCommand = new RelayCommand(SortDepartureDate);
+            SortPassengersCommand = new RelayCommand(SortPassengers);
 
             Items = new ObservableCollection<UserFlightsItemViewModel>();
 
@@ -162,15 +173,27 @@ namespace Airport
 
             SetTodayFlights(TodayDay, TodayMonth);
         }
+
+        public void SortId()
+        {
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Id));
+        }
+        public void SortPlane()
+        {
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Plane));
+        }
+        public void SortDepartureDate()
+        {
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.DepartureDateTime));
+        }
+        public void SortPassengers()
+        {
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Passengers));
+        }
+
+
         public void SearchFlightId()
         {
-            // Make sure we don't re-search the same text
-            if ((string.IsNullOrEmpty(mLastSearchText) && string.IsNullOrEmpty(SearchText)) ||
-                string.Equals(mLastSearchText, SearchText)&&
-                (((string.IsNullOrEmpty(mLastSearchDay) && string.IsNullOrEmpty(SearchDay))) || 
-                ((string.IsNullOrEmpty(mLastSearchMonth) && string.IsNullOrEmpty(SearchMonth))) &&
-                ((string.Equals(mLastSearchDay, SearchDay)) && (string.Equals(mLastSearchMonth, SearchMonth)))))
-                return;
 
             // If we have no search text, or no items
             if (string.IsNullOrEmpty(SearchText) || Items == null || Items.Count() <= 0)
@@ -188,7 +211,7 @@ namespace Airport
             // Find all items that contain the given text
             // TODO: Make more efficient search
             FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
-                Items.Where(item => item.Id.Contains(SearchText) && item.FlightDateDDMM.Month.Equals(Int32.Parse(SearchMonth)) && item.FlightDateDDMM.Day.Equals(Int32.Parse(SearchDay))));
+                Items.Where(item => item.Id.Contains(SearchText) && item.DepartureDateTime.Month.Equals(Int32.Parse(SearchMonth)) && item.DepartureDateTime.Day.Equals(Int32.Parse(SearchDay))));
 
             // Set last search text
             mLastSearchText = SearchText;
@@ -196,15 +219,11 @@ namespace Airport
 
         public void SearchFlightDate()
         {
-            // Make sure we don't re-search the same text
-            if (((string.IsNullOrEmpty(mLastSearchDay) && string.IsNullOrEmpty(SearchDay))) && ((string.IsNullOrEmpty(mLastSearchMonth) && string.IsNullOrEmpty(SearchMonth))) ||
-                ((string.Equals(mLastSearchDay, SearchDay)) &&
-                (string.Equals(mLastSearchMonth, SearchMonth))))
-                return;
 
             // If we have no search date, or no items
             if (string.IsNullOrEmpty(SearchDay) || string.IsNullOrEmpty(SearchMonth) || Items == null || Items.Count() <= 0)
             {
+
                 // Make filtered list the same
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
 
@@ -214,16 +233,15 @@ namespace Airport
                 // Set last search month
                 mLastSearchMonth = SearchMonth;
 
+                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
+                                                                                               item.DepartureDateTime.Month.Equals(Int32.Parse(TodayMonth))
+                                                                                            && item.DepartureDateTime.Day.Equals(Int32.Parse(TodayDay))));
                 return;
             }
-                // Find all items that contain the chosen Date
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => 
-                                                                                               item.FlightDateDDMM.Month.Equals(Int32.Parse(SearchMonth))
-                                                                                            && item.FlightDateDDMM.Day.Equals(Int32.Parse(SearchDay))));
-
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
-                                                                                               item.FlightDateDDMM.Month.Equals(Int32.Parse(SearchMonth))
-                                                                                            && item.FlightDateDDMM.Day.Equals(Int32.Parse(SearchDay))));
+            // Find all items that contain the chosen Date
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => 
+                                                                                               item.DepartureDateTime.Month.Equals(Int32.Parse(SearchMonth))
+                                                                                            && item.DepartureDateTime.Day.Equals(Int32.Parse(SearchDay))));
             // Set last search day
             mLastSearchDay = SearchDay;
 
@@ -240,11 +258,7 @@ namespace Airport
             if (!string.IsNullOrEmpty(SearchText))
                 // Clear the text
                 SearchText = string.Empty;
-        }
-
-        public void ShowTodayFlights()
-        {
-
+            SearchFlightDate();
         }
 
         #region Private Helpers
@@ -252,7 +266,9 @@ namespace Airport
         private void LoadData(string path)
         {
             if (File.Exists(path))
-                Items = (JsonConvert.DeserializeObject<ObservableCollection<UserFlightsItemViewModel>>(File.ReadAllText(path)));
+                Items = JsonConvert.DeserializeObject<ObservableCollection<UserFlightsItemViewModel>>(File.ReadAllText(path));
+                
+            Items = new ObservableCollection<UserFlightsItemViewModel>(Items.OrderBy(o => o.Id));
         }
 
         private void SetTodayFlights(string day, string month)
@@ -261,10 +277,12 @@ namespace Airport
             {
 
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item =>
-                                                                                               item.FlightDateDDMM.Month.Equals(Int32.Parse(TodayMonth))
-                                                                                            && item.FlightDateDDMM.Day.Equals(Int32.Parse(TodayDay))));
+                                                                                               item.DepartureDateTime.Month.Equals(Int32.Parse(TodayMonth))
+                                                                                            && item.DepartureDateTime.Day.Equals(Int32.Parse(TodayDay))));
             }
         }
+
         #endregion
+
     }
 }

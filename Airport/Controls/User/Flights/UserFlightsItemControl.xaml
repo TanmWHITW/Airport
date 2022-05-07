@@ -88,12 +88,12 @@
                 </Border.BorderBrush>
                 <Grid HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="50" />
                         <ColumnDefinition Width="140" />
-                        <ColumnDefinition Width="42" />
+                        <ColumnDefinition Width="50" />
                     </Grid.ColumnDefinitions>
                     <StackPanel VerticalAlignment="Center"
-                                                    HorizontalAlignment="Right"
+                                                    HorizontalAlignment="Center"
                                                     TextBlock.TextAlignment="Center">
                         <TextBlock Text="{Binding DepartureAirport}" 
                                                        FontFamily="{StaticResource MontserratBold}"
@@ -139,7 +139,7 @@
 
                     <StackPanel Grid.Column="2"
                                                     VerticalAlignment="Center"
-                                                    HorizontalAlignment="Left"
+                                                    HorizontalAlignment="Center"
                                                     TextBlock.TextAlignment="Center">
                         <TextBlock Text="{Binding ArrivalAirport}" 
                                                        FontFamily="{StaticResource MontserratBold}"
