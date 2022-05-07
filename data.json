@@ -1,0 +1,301 @@
+[
+  {"Id":"BOS170"
+"FlightDateDDMM":"2022-04-21T14:45:34.9443009+00:00"
+"Plane":"Boeing 777-300ER"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-21T10:15:34.9443009+00:00"
+"ArrivalCity":"Санкт-Петербург"
+"ArrivalAirport":"LED"
+"ArrivalDateTime":"2022-04-21T14:45:34.9443009+00:00"
+"Passengers":27
+  },
+  {
+"Id":"AIM292"
+"FlightDateDDMM":"2022-04-21T14:04:34.9443009+00:00"
+"Plane":"Airbus А330-300"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-21T11:34:34.9443009+00:00"
+"ArrivalCity":"Мурманск"
+"ArrivalAirport":"MMK"
+"ArrivalDateTime":"2022-04-21T14:04:34.9443009+00:00"
+"Passengers":12
+},
+  {
+"Id":"AII281"
+"FlightDateDDMM":"2022-04-22T00:25:34.9443009+00:00"
+"Plane":"Airbus А321"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-21T18:25:34.9443009+00:00"
+"ArrivalCity":"Иркутск"
+"ArrivalAirport":"IKT"
+"ArrivalDateTime":"2022-04-22T00:25:34.9443009+00:00"
+"Passengers":10
+},
+  {
+"Id":"AI222"
+"FlightDateDDMM":"2022-04-21T17:55:34.9443009+00:00"
+"Plane":"Airbus A320"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-21T15:25:34.9443009+00:00"
+"ArrivalCity":"Екатеринбург"
+"ArrivalAirport":"SVX"
+"ArrivalDateTime":"2022-04-21T17:55:34.9443009+00:00"
+"Passengers":15
+},
+  {
+    "Id":"BOO176"
+"FlightDateDDMM":"2022-04-21T13:55:34.9443009+00:00"
+"Plane":"Boeing 767-200"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-21T10:25:34.9443009+00:00"
+"ArrivalCity":"Омск"
+"ArrivalAirport":"OMS"
+"ArrivalDateTime":"2022-04-21T13:55:34.9443009+00:00"
+"Passengers":25
+},
+  {
+"Id":"EMO854"
+"FlightDateDDMM":"2022-04-22T12:13:34.9443009+00:00"
+"Plane":"Embraer 170"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-22T09:33:34.9443009+00:00"
+"ArrivalCity":"Орск"
+"ArrivalAirport":"OSW"
+"ArrivalDateTime":"2022-04-22T12:13:34.9443009+00:00"
+"Passengers":8
+},
+  {
+"Id":"AIP471"
+"FlightDateDDMM":"2022-04-22T13:36:34.9443009+00:00"
+"Plane":"Airbus A350-900"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-22T12:16:34.9443009+00:00"
+"ArrivalCity":"Псков"
+"ArrivalAirport":"PKV"
+"ArrivalDateTime":"2022-04-22T13:36:34.9443009+00:00"
+"Passengers":16
+},
+  {
+"Id":"AIS901"
+"FlightDateDDMM":"2022-04-22T16:31:34.9443009+00:00"
+"Plane":"Airbus A321neo"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-22T13:16:34.9443009+00:00"
+"ArrivalCity":"Сабетта"
+"ArrivalAirport":"SBT"
+"ArrivalDateTime":"2022-04-22T16:31:34.9443009+00:00"
+"Passengers":11
+},
+  {
+"Id":"BOS444"
+"FlightDateDDMM":"2022-04-22T19:01:34.9443009+00:00"
+"Plane":"Boeing 767-200"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-22T16:16:34.9443009+00:00"
+"ArrivalCity":"Сочи"
+"ArrivalAirport":"AER"
+"ArrivalDateTime":"2022-04-22T19:01:34.9443009+00:00"
+"Passengers":32
+},
+  {
+"Id":"EMK631"
+"FlightDateDDMM":"2022-04-22T17:16:34.9443009+00:00"
+"Plane":"Embraer 170"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-22T07:16:34.9443009+00:00"
+"ArrivalCity":"Хабаровск"
+"ArrivalAirport":"KHV"
+"ArrivalDateTime":"2022-04-22T17:16:34.9443009+00:00"
+"Passengers":7
+},
+  {
+"Id":"BOU081"
+"FlightDateDDMM":"2022-04-23T16:17:34.9443009+00:00"
+"Plane":"Boeing 737-400"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-23T10:22:34.9443009+00:00"
+"ArrivalCity":"Улан-Удэ"
+"ArrivalAirport":"UUD"
+"ArrivalDateTime":"2022-04-23T16:17:34.9443009+00:00"
+"Passengers":28
+},
+  {
+"Id":"SUE777"
+"FlightDateDDMM":"2022-04-23T11:45:34.9443009+00:00"
+"Plane":"Sukhoi SuperJet 100"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-23T09:50:34.9443009+00:00"
+"ArrivalCity":"Элиста"
+"ArrivalAirport":"ESL"
+"ArrivalDateTime":"2022-04-23T11:45:34.9443009+00:00"
+"Passengers":21
+},
+  {
+"Id":"AIH189"
+"FlightDateDDMM":"2022-04-23T23:55:34.9443009+00:00"
+"Plane":"Airbus A350-900"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-23T17:50:34.9443009+00:00"
+"ArrivalCity":"Чита"
+"ArrivalAirport":"HTA"
+"ArrivalDateTime":"2022-04-23T23:55:34.9443009+00:00"
+"Passengers":18
+},
+  {
+"Id":"AIG587"
+"FlightDateDDMM":"2022-04-23T14:50:34.9443009+00:00"
+"Plane":"Airbus A321neo"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-23T11:20:34.9443009+00:00"
+"ArrivalCity":"Грозный"
+"ArrivalAirport":"GRV"
+"ArrivalDateTime":"2022-04-23T14:50:34.9443009+00:00"
+"Passengers":17
+},
+  {
+"Id":"BOS900"
+"FlightDateDDMM":"2022-04-24T01:08:34.9443009+00:00"
+"Plane":"Boeing 777-300ER"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-23T23:33:34.9443009+00:00"
+"ArrivalCity":"Санкт-Петербург"
+"ArrivalAirport":"RHV"
+"ArrivalDateTime":"2022-04-24T00:48:34.9443009+00:00"
+"Passengers":41
+},
+  {
+"Id":"BOS633"
+"FlightDateDDMM":"2022-04-23T09:25:34.9443009+00:00"
+"Plane":"Boeing 737-800"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-24T06:40:34.9443009+00:00"
+"ArrivalCity":"Сочи"
+"ArrivalAirport":"AER"
+"ArrivalDateTime":"2022-04-24T09:25:34.9443009+00:00"
+"Passengers":28
+},
+  {
+"Id":"EMS105"
+"FlightDateDDMM":"2022-04-24T13:22:34.9443009+00:00"
+"Plane":"Embraer 170"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-24T11:22:34.9443009+00:00"
+"ArrivalCity":"Сыктывкар"
+"ArrivalAirport":"SCW"
+"ArrivalDateTime":"2022-04-24T13:22:34.9443009+00:00"
+"Passengers":12
+},
+  {
+"Id":"BOO498"
+"FlightDateDDMM":"2022-04-24T21:32:34.9443009+00:00"
+"Plane":"Boeing 737-800"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-24T18:47:34.9443009+00:00"
+"ArrivalCity":"Орск"
+"ArrivalAirport":"OSW"
+"ArrivalDateTime":"2022-04-24T21:32:34.9443009+00:00"
+"Passengers":66
+},
+  {
+"Id":"BOS409"
+"FlightDateDDMM":"2022-04-24T18:52:34.9443009+00:00"
+"Plane":"Boeing 767-200"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-24T15:32:34.9443009+00:00"
+"ArrivalCity":"Ставрополь"
+"ArrivalAirport":"STW"
+"ArrivalDateTime":"2022-04-24T18:52:34.9443009+00:00"
+"Passengers":55
+},
+  {
+"Id":"AIT823"
+"FlightDateDDMM":"2022-04-24T03:52:34.9443009+00:00"
+"Plane":"Airbus A350-900"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-24T23:42:34.9443009+00:00"
+"ArrivalCity":"Томск"
+"ArrivalAirport":"TOF"
+"ArrivalDateTime":"2022-04-25T03:52:34.9443009+00:00"
+"Passengers":26
+},
+  {
+"Id":"SUI390"
+"FlightDateDDMM":"2022-04-25T10:11:34.9443009+00:00"
+"Plane":"Sukhoi SuperJet 100"
+"DepartureCity":"Москва"
+"DepartureAirport":"DME"
+"DepartureDateTime":"2022-04-25T09:06:34.9443009+00:00"
+"ArrivalCity":"Ярославль"
+"ArrivalAirport":"IAR"
+"ArrivalDateTime":"2022-04-25T10:11:34.9443009+00:00"
+"Passengers":27
+},
+  {
+"Id":"AIH591"
+"FlightDateDDMM":"2022-04-25T18:56:34.9443009+00:00"
+"Plane":"Airbus A350-900"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-25T12:46:34.9443009+00:00"
+"ArrivalCity":"Чита"
+"ArrivalAirport":"HTA"
+"ArrivalDateTime":"2022-04-25T18:56:34.9443009+00:00"
+"Passengers":22
+},
+  {
+"Id":"BOS118"
+"FlightDateDDMM":"2022-04-25T15:37:34.9443009+00:00"
+"Plane":"Boeing 737-800"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-25T14:12:34.9443009+00:00"
+"ArrivalCity":"Саранск"
+"ArrivalAirport":"SKX"
+"ArrivalDateTime":"2022-04-25T15:37:34.9443009+00:00"
+"Passengers":69
+},
+  {
+"Id":"AIR911"
+"FlightDateDDMM":"2022-04-25T20:02:34.9443009+00:00"
+"Plane":"Airbus A321neo"
+"DepartureCity":"Москва"
+"DepartureAirport":"VKO"
+"DepartureDateTime":"2022-04-25T18:12:34.9443009+00:00"
+"ArrivalCity":"Ростов-на-Дону"
+"ArrivalAirport":"ROV"
+"ArrivalDateTime":"2022-04-25T20:02:34.9443009+00:00"
+"Passengers":19
+},
+  {
+"Id":"BOK307"
+"FlightDateDDMM":"2022-04-25T22:13:34.9443009+00:00"
+"Plane":"Boeing 737-800"
+"DepartureCity":"Москва"
+"DepartureAirport":"SVO"
+"DepartureDateTime":"2022-04-25T19:12:34.9443009+00:00"
+"ArrivalCity":"Курган"
+"ArrivalAirport":"KRO"
+"ArrivalDateTime":"2022-04-25T22:13:34.9443009+00:00"
+"Passengers":81
+    }
+]
