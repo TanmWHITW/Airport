@@ -116,11 +116,6 @@ namespace Airport
         /// </summary>
         public GridLength TitleHeightGridLength { get { return new GridLength(TitleHeight + ResizeBorder); } }
 
-        /// <summary>
-        /// The current page of the application
-        /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.UserFlights;
-
         #endregion
 
         #region Commands
