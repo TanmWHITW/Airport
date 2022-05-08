@@ -65,16 +65,21 @@ namespace Airport
         {
             await RunCommand(() => AdminLoginIsRunning, async () =>
             {
-                await Task.Delay(5000);
-
                 var username = Username;
                 var key = Key;
+
+                await Task.Delay(5000);
+
+                if (username != "admin" || key != "AbV12m3")
+                    return;
+
+                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminFlights);
             });
         }
 
         public async Task UserLoginAsync()
         {
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.UserLogin;
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.UserLogin);
 
             await Task.Delay(1);
         }

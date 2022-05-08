@@ -68,7 +68,7 @@ namespace Airport
             {
                 await Task.Delay(5000);
 
-                IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.UserFlights;
+                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.UserFlights);
             });
         }
 
@@ -77,7 +77,7 @@ namespace Airport
         /// </summary>
         public async Task AdminLoginAsync()
         {
-            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.AdminLogin;
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
 
             await Task.Delay(1);
         }
