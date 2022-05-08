@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Airport.NET;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 
@@ -18,6 +19,9 @@ namespace Airport
 
                 case ApplicationPage.UserFlights:
                     return new UserFlightsPage();
+
+                case ApplicationPage.AdminFlights:
+                    return new AdminFlightsPage();
 
                 default:
                     Debugger.Break();

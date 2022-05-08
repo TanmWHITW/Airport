@@ -14,14 +14,14 @@
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         TextBlock.TextAlignment="Center">
-                <Border Background="{StaticResource ForegroundWhiteBrush}"
-                        CornerRadius="10"
+                <Button Background="Transparent"
+                        Content="Хочу смотреть полеты!"
                         Padding="15 10 15 15"
                         Width="330"
                         Margin="50 50 50 0"
                         >
                     
-                </Border>
+                </Button>
 
                 <Button Content="А у меня админка есть..." 
                         HorizontalAlignment="Center" 

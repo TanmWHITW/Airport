@@ -6,7 +6,7 @@ using System.Windows.Input;
 /// TO DO: not done!
 /// </summary>
 
-namespace Airport
+namespace Airport.NET
 {
     /// <summary>
     /// A basic command that runs an Action

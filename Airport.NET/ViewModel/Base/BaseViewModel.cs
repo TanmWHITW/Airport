@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 /// TO DO: not done!
 /// </summary>
 
-namespace Airport
+namespace Airport.NET
 {
     /// <summary>
     /// A base view model that fires Property Changed events as needed

@@ -1,4 +1,4 @@
-﻿namespace Airport
+﻿namespace Airport.NET
 {
     public enum ApplicationPage
     {
