@@ -44,6 +44,9 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.5.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.5\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="PropertyChanged, Version=3.4.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.3.4.0\lib\net40\PropertyChanged.dll</HintPath>
     </Reference>
@@ -67,11 +70,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animations\FrameworkElementAnimations.cs" />
     <Compile Include="Animations\PageAnimations.cs" />
     <Compile Include="Animations\PageAnimation.cs" />
     <Compile Include="Animations\StoryboardHelpers.cs" />
     <Compile Include="AttachedPropeties\Base\BaseAttachedProperty.cs" />
+    <Compile Include="AttachedPropeties\FrameworkElementAnimationAttachedProperties.cs" />
     <Compile Include="AttachedPropeties\IsBusyProperty.cs" />
+    <Compile Include="AttachedPropeties\NoFrameHistoryAttachedProperty.cs" />
+    <Compile Include="Controls\PageHost.xaml.cs">
+      <DependentUpon>PageHost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\User\Flights\UserFlightsItemControl.xaml.cs">
       <DependentUpon>UserFlightsItemControl.xaml</DependentUpon>
     </Compile>
@@ -91,6 +100,7 @@
     <Compile Include="Pages\AdminLoginPage.cs">
       <DependentUpon>AdminLoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\IoCConverter.cs" />
     <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
@@ -103,8 +113,13 @@
     <Compile Include="ViewModel\UserFlights\UserFlightsItemViewModel.cs" />
     <Compile Include="ViewModel\UserFlights\UserFlightsListViewModel.cs" />
     <Compile Include="ViewModel\UserLoginViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
+    <Page Include="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\User\Flights\UserFlightsItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

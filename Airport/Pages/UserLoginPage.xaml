@@ -14,18 +14,25 @@
             <StackPanel VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         TextBlock.TextAlignment="Center">
-                <Button Background="Transparent"
+                <Border>
+                    <Button Style="{StaticResource TextButton}"
                         Content="Хочу смотреть полеты!"
-                        Padding="15 10 15 15"
-                        Width="330"
-                        Margin="50 50 50 0"
+                        FontSize="{StaticResource FontSizeXL}"
+                        FontFamily="{StaticResource MontserratBold}"
+                        Padding="15 10 15 10"
+                        Margin="50 50 50 100"
+                        local:IsBusyProperty.Value="{Binding UserLoginIsRunning}"
+                        Command="{Binding UserLoginCommand}"
                         >
-                    
-                </Button>
 
-                <Button Content="А у меня админка есть..." 
-                        HorizontalAlignment="Center" 
-                        Style="{StaticResource TextButton}"/>
+                    </Button>
+                </Border>
+
+                <Button Content="Я админ блин..."
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource TextButton}" 
+                        Command="{Binding AdminLoginCommand}"
+                        />
 
             </StackPanel>
         </ScrollViewer>

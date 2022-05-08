@@ -36,6 +36,11 @@ namespace Airport
         /// </summary>
         public ICommand UserLoginCommand { get; set; }
 
+        /// <summary>
+        /// The command to login
+        /// </summary>
+        public ICommand AdminLoginCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -46,23 +51,35 @@ namespace Airport
         public UserLoginViewModel()
         {
             // Create commands
-            UserLoginCommand = new RelayCommand(async () => await UserLogin());
+            UserLoginCommand = new RelayCommand(async () => await UserLoginAsync());
+            AdminLoginCommand = new RelayCommand(async () => await AdminLoginAsync());
         }
+
 
         #endregion
 
         /// <summary>
         /// Attempts to log the user in
         /// </summary>
-        /// <param name="parameter">The <see cref="SecureString"/> passed in from the view for the users password</param>
         /// <returns></returns>
-        public async Task UserLogin()
+        public async Task UserLoginAsync()
         {
             await RunCommand(() => this.UserLoginIsRunning, async () =>
             {
                 await Task.Delay(5000);
 
+                IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.UserFlights;
             });
+        }
+
+        /// <summary>
+        /// Move to Admin Login Page
+        /// </summary>
+        public async Task AdminLoginAsync()
+        {
+            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.AdminLogin;
+
+            await Task.Delay(1);
         }
     }
 }

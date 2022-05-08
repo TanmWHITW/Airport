@@ -40,8 +40,7 @@
                                 HorizontalAlignment="Center"
                                 Margin="0 30 0 20"
                                 local:IsBusyProperty.Value="{Binding AdminLoginIsRunning}"
-                                Command="{Binding AdminLoginCommand}"
-                                CommandParameter="{Binding ElementName=Page}"/>
+                                Command="{Binding AdminLoginCommand}"/>
 
                     </StackPanel>
                 </Border>
@@ -49,6 +48,7 @@
                 <Button Content="Я не админ блин..."
                         HorizontalAlignment="Center"
                         Style="{StaticResource TextButton}" 
+                        Command="{Binding UserLoginCommand}"
                         />
 
             </StackPanel>

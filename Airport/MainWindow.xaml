@@ -114,7 +114,8 @@
 
                                     <Border Grid.Row="1"
                                             Grid.RowSpan="2"
-                                            Background="{StaticResource MainBlueBrush}">
+                                            Background="{StaticResource MainBlueBrush}"
+                                            ClipToBounds="True">
                                             <Border>
                                             <Border.Background>
                                                 <ImageBrush ImageSource="/Images/Backgrounds/plane-background_2.png" Stretch="None"/>
@@ -143,7 +144,13 @@
     </WindowChrome.WindowChrome>
 
     <Grid>
-        <Frame x:Name="MainFrame" Content="{Binding ApplicationViewModel.CurrentPage, ElementName=AppWindow, Converter={local:ApplicationPageValueConverter}}" />
+        <local:PageHost
+               d:DataContext=""
+               DataContext="{Binding ApplicationViewModel.CurrentPage,
+                         Source={x:Static local:ViewModelLocator.Instance}, 
+                         Converter={local:ApplicationPageValueConverter}}" 
+               CurrentPage="{Binding}"
+               />
     </Grid>
 
 </Window>

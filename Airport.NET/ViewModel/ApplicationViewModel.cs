@@ -11,6 +11,6 @@ namespace Airport.NET
         /// <summary>
         /// The current page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.UserFlights;
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.AdminLogin;
     }
 }
