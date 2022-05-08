@@ -9,6 +9,11 @@
       Title="AdminFlightsPage">
 
     <Grid>
-        <TextBlock Text="TEST" />
+        <TextBlock Text="TEST" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="{StaticResource FontSizeXL}" 
+                   Foreground="{StaticResource MainRedBrush}"
+                   FontFamily="{StaticResource MontserratBold}"/>
     </Grid>
 </local:BasePage>
