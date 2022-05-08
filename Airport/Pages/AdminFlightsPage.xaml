@@ -9,7 +9,7 @@
       Title="AdminFlightsPage">
 
     <Grid>
-        <TextBlock Text="TEST" 
+        <TextBlock Text="Admin Panel for Flights" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center" 
                    FontSize="{StaticResource FontSizeXL}" 
