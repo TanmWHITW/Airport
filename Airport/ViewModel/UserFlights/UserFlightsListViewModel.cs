@@ -164,7 +164,7 @@ namespace Airport
 
             Items = new ObservableCollection<UserFlightsItemViewModel>();
 
-            string filePath = "data.json";
+            string filePath = "C:/Users/vest1/source/repos/TanmWHITW/Airport/Airport.NET/data/data.json";
 
             LoadData(filePath);
 
