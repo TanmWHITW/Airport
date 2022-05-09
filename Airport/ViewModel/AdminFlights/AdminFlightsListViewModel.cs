@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Airport
@@ -15,7 +16,7 @@ namespace Airport
     {
         protected ObservableCollection<AdminFlightsItemViewModel> mItems;
 
-        protected string filePath = "C:/Users/vest1/source/repos/TanmWHITW/Airport/Airport.NET/data/data.json";
+        protected string filePath = "C:/Users/Public/Documents/data.json";
 
         public string Id { get; set; }
 
@@ -25,7 +26,7 @@ namespace Airport
 
         public CitiesItemViewModel City { get; set; }
 
-        public int Passengers { get; set; }
+        public string Passengers { get; set; }
 
 
         public ObservableCollection<AdminFlightsItemViewModel> Items
@@ -552,11 +553,16 @@ namespace Airport
 
         public void AddNewFlight()
         {
+
+
+            if (string.IsNullOrEmpty(Id) || string.IsNullOrEmpty(Plane.Plane) || string.IsNullOrEmpty(City.City) || !DateTime.TryParse(DepartureDateTime, out _) || !Int32.TryParse(Passengers, out _))
+            {
+                MessageBox.Show("Введите корректные данные", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (Items == null)
                 Items = new ObservableCollection<AdminFlightsItemViewModel>();
-
-            DateTimeOffset dateTime = DateTimeOffset.Now;
-
 
 
             var flight = new AdminFlightsItemViewModel
@@ -570,7 +576,7 @@ namespace Airport
                 ArrivalAirport = City.Airport,
                 ArrivalCity = City.City,
                 ArrivalDateTime = DateTimeOffset.Parse(DepartureDateTime).Add(City.FlightTime),
-                Passengers = Passengers,
+                Passengers = Int32.Parse(Passengers),
             };
             if (Items.Any(item => item.Id.Equals(flight.Id)))
             {
