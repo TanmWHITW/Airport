@@ -53,7 +53,7 @@
                                  />
 
                             <TextBox Style="{StaticResource SearchTextBox}" 
-                             Text="{Binding ArrivalDateTime, UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding DepartureDateTime, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Введите время вылета" HorizontalAlignment="Stretch"
                              />
                             <TextBox Style="{StaticResource SearchTextBox}" 

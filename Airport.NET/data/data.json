@@ -1,13 +1,26 @@
-{
-  "compilerOptions": {
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
+[
+  {
+    "Id": "BOS170",
+    "FlightDateDDMM": "2022-04-21T14:45:34.9443009+00:00",
+    "Plane": "Boeing 777-300ER",
+    "DepartureCity": "Москва",
+    "DepartureAirport": "SVO",
+    "DepartureDateTime": "2022-04-21T10:15:34.9443009+00:00",
+    "ArrivalCity": "Санкт-Петербург",
+    "ArrivalAirport": "LED",
+    "ArrivalDateTime": "2022-04-21T14:45:34.9443009+00:00",
+    "Passengers": 27
   },
-  "exclude": [
-    "node_modules",
-    "wwwroot"
-  ]
-}
+  {
+    "Id": "AIM292",
+    "FlightDateDDMM": "2022-04-21T14:04:34.9443009+00:00",
+    "Plane": "Airbus А330-300",
+    "DepartureCity": "Москва",
+    "DepartureAirport": "SVO",
+    "DepartureDateTime": "2022-04-21T11:34:34.9443009+00:00",
+    "ArrivalCity": "Мурманск",
+    "ArrivalAirport": "MMK",
+    "ArrivalDateTime": "2022-04-21T14:04:34.9443009+00:00",
+    "Passengers": 12
+  }
+]

@@ -17,11 +17,7 @@ namespace Airport
 
         public PlanesItemViewModel Plane { get; set; }
 
-        public string DepartureCity { get; set; } = "Москва";
-
-        public string DepartureAirport { get; set; } = "SVO";
-
-        public DateTimeOffset DepartureDateTime { get; set; } = DateTimeOffset.Now;
+        public string DepartureDateTime { get; set; }
 
         public string ArrivalCity { get; set; }
 
@@ -45,8 +41,6 @@ namespace Airport
                 // Update value
                 mItems = value;
 
-                // Update filtered list to match
-                FilteredItems = new ObservableCollection<AdminFlightsItemViewModel>(mItems);
             }
         }
 
@@ -54,7 +48,8 @@ namespace Airport
             new CitiesItemViewModel
             {
                 City = "Санкт-Петербург",
-                FlightTime = DateTime.Parse("04:22"),
+                Airport = "LED",
+                FlightTime = TimeSpan.Parse("02:00:00"),
             } 
         };
         public List<PlanesItemViewModel> Planes { get; set; } = new List<PlanesItemViewModel> {
@@ -64,8 +59,6 @@ namespace Airport
                 Id = 1,
             }
         };
-
-        public ObservableCollection<AdminFlightsItemViewModel> FilteredItems { get; set; }
 
         public ICommand AddNewFlightCommand { get; set; }
         public ICommand DeleteChosenFlightCommand { get; set; }
@@ -83,43 +76,35 @@ namespace Airport
             if (Items == null)
                 Items = new ObservableCollection<AdminFlightsItemViewModel>();
 
-            if (FilteredItems == null)
-                FilteredItems = new ObservableCollection<AdminFlightsItemViewModel>();
+            DateTimeOffset dateTime = DateTimeOffset.Now;
 
             var flight = new AdminFlightsItemViewModel
             {
                 Id = Id,
                 Plane = Plane.Plane,
                 PlaneId = Plane.Id,
-                DepartureAirport = DepartureAirport,
-                DepartureCity = DepartureCity,
-                DepartureDateTime = DepartureDateTime,
-                ArrivalAirport = ArrivalAirport,
+                DepartureAirport = "SVO",
+                DepartureCity = "Москва",
+                DepartureDateTime = DateTimeOffset.Parse(DepartureDateTime),
+                ArrivalAirport = City.Airport,
                 ArrivalCity = City.City,
-                ArrivalDateTime = ArrivalDateTime,
+                ArrivalDateTime = DateTimeOffset.Parse(DepartureDateTime).Add(City.FlightTime),
                 Passengers = Passengers,
             };
             if (Items.Any(item => item.Id.Equals(flight.Id)))
             {
                 Items.Remove(Items.First(item => item.Id.Equals(flight.Id)));
-                FilteredItems.Remove(FilteredItems.First(item => item.Id.Equals(flight.Id)));
-
                 Items.Add(flight);
-                FilteredItems.Add(flight);
                 return;
             }
             Items.Add(flight);
-            FilteredItems.Add(flight);
         }
 
         public void DeleteChosenFlight()
         {
             foreach (var item in Items.ToArray())
                 if (item.IsChosen == true)
-                {
                     Items.Remove(item);
-                    FilteredItems?.Remove(item);
-                }
         }
     }
 }

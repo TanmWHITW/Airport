@@ -9,7 +9,8 @@ namespace Airport
 {
     public class CitiesItemViewModel: BaseViewModel
     {
-        public string City { get; set; }    
-        public DateTimeOffset FlightTime { get; set; }
+        public string City { get; set; }  
+        public string Airport { get; set; }
+        public TimeSpan FlightTime { get; set; }
     }
 }
