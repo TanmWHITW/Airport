@@ -66,7 +66,7 @@ namespace Airport
         {
             await RunCommand(() => this.UserLoginIsRunning, async () =>
             {
-                await Task.Delay(5000);
+                await Task.Delay(1000);
 
                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.UserFlights);
             });

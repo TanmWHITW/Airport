@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -20,11 +18,11 @@ namespace Airport
 
         public string Id { get; set; }
 
-        public PlanesItemViewModel Plane { get; set; }
+        public PlanesItemViewModel Plane { get; set; } = null;
 
         public string DepartureDateTime { get; set; }
 
-        public CitiesItemViewModel City { get; set; }
+        public CitiesItemViewModel City { get; set; } = null;
 
         public string Passengers { get; set; }
 
@@ -542,20 +540,25 @@ namespace Airport
         public ICommand AddNewFlightCommand { get; set; }
         public ICommand DeleteChosenFlightCommand { get; set; }
 
+        public ICommand LogoutCommand { get; set; }
+
 
         public AdminFlightsListViewModel()
         {
             AddNewFlightCommand = new RelayCommand(AddNewFlight);
             DeleteChosenFlightCommand = new RelayCommand(DeleteChosenFlight);
+            LogoutCommand = new RelayCommand(Logout);
 
             LoadData(filePath);
         }
 
         public void AddNewFlight()
         {
-
-
-            if (string.IsNullOrEmpty(Id) || string.IsNullOrEmpty(Plane.Plane) || string.IsNullOrEmpty(City.City) || !DateTime.TryParse(DepartureDateTime, out _) || !Int32.TryParse(Passengers, out _))
+            if (string.IsNullOrEmpty(Id) || 
+                Plane == null || 
+                City == null || 
+                !DateTime.TryParse(DepartureDateTime, out _) || 
+                !Int32.TryParse(Passengers, out _))
             {
                 MessageBox.Show("Введите корректные данные", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -564,14 +567,13 @@ namespace Airport
             if (Items == null)
                 Items = new ObservableCollection<AdminFlightsItemViewModel>();
 
-
             var flight = new AdminFlightsItemViewModel
             {
-                Id = Id,
+                Id = City.City[0] + Plane.Plane[0] + Id,
                 Plane = Plane.Plane,
                 PlaneId = Plane.Id,
                 DepartureAirport = "SVO",
-                DepartureCity = "Москва",
+                DepartureCity   = "Москва",
                 DepartureDateTime = DateTimeOffset.Parse(DepartureDateTime),
                 ArrivalAirport = City.Airport,
                 ArrivalCity = City.City,
@@ -595,6 +597,11 @@ namespace Airport
                 if (item.IsChosen == true)
                     Items.Remove(item);
             UploadData(filePath);
+        }
+
+        public void Logout()
+        {
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
         }
 
         private void LoadData(string path)

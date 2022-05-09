@@ -9,6 +9,10 @@
       Title="AdminFlightsPage">
 
     <Grid>
+        <Button Content="Выйти" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Command="{Binding LogoutCommand}"/>
         <Border Margin="20">
             <StackPanel 
                         >
@@ -71,7 +75,8 @@
                 <Button Content="Удалить выбранные" 
                         Command="{Binding DeleteChosenFlightCommand}"
                         />
-                <local:AdminFlightsListControl />
+                <local:AdminFlightsListControl Height="400"
+                        DataContext="{Binding}"/>
             </StackPanel>
         </Border>
     </Grid>

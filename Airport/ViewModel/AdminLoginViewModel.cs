@@ -1,5 +1,6 @@
 ﻿using Airport.NET;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 /// <summary>
@@ -68,10 +69,13 @@ namespace Airport
                 var username = Username;
                 var key = Key;
 
-                await Task.Delay(5000);
+                await Task.Delay(1000);
 
                 if (username != "admin" || key != "111")
+                {
+                    MessageBox.Show("Введен неверный логин или ключ доступа", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
+                }
 
                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminFlights);
             });
