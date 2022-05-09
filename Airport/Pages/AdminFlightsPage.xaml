@@ -20,7 +20,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <StackPanel>
-                            <TextBlock Text="Admin Panel for Flights"      
+                            <TextBlock Text="Удаление/изменение"      
                            FontSize="{StaticResource FontSizeLarge}" 
                            Foreground="{StaticResource ForegroundGreyDarkBrush}"
                            FontFamily="{StaticResource MontserratBold}"

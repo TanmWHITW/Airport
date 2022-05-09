@@ -23,15 +23,10 @@ namespace Airport
 
         public string DepartureDateTime { get; set; }
 
-        public string ArrivalCity { get; set; }
-
-        public string ArrivalAirport { get; set; }
-
-        public DateTimeOffset ArrivalDateTime { get; set; }
+        public CitiesItemViewModel City { get; set; }
 
         public int Passengers { get; set; }
 
-        public CitiesItemViewModel City { get; set; }
 
         public ObservableCollection<AdminFlightsItemViewModel> Items
         {
@@ -561,6 +556,8 @@ namespace Airport
                 Items = new ObservableCollection<AdminFlightsItemViewModel>();
 
             DateTimeOffset dateTime = DateTimeOffset.Now;
+
+
 
             var flight = new AdminFlightsItemViewModel
             {

@@ -208,7 +208,7 @@ namespace Airport
             // Find all items that contain the given text
             // TODO: Make more efficient search
             FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
-                Items.Where(item => item.Id.Contains(SearchText) && item.DepartureDateTime.Month.Equals(Int32.Parse(SearchMonth)) && item.DepartureDateTime.Day.Equals(Int32.Parse(SearchDay))));
+                Items.Where(item => item.Id.Contains(SearchText) && (item.DepartureDateTime.Month.Equals(Int32.Parse(SearchMonth))) && (item.DepartureDateTime.Day.Equals(Int32.Parse(SearchDay)))));
 
             // Set last search text
             mLastSearchText = SearchText;

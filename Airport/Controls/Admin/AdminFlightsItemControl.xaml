@@ -90,9 +90,9 @@
                 </Border.BorderBrush>
                 <Grid HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50" />
-                        <ColumnDefinition Width="140" />
-                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel VerticalAlignment="Center"
                                                     HorizontalAlignment="Center"
@@ -102,40 +102,17 @@
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
+                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>
 
                     <Border Grid.Column="1">
-                        <Canvas>
 
-                            <Line
-                                                      StrokeThickness="4"
-                                                      X1="18" Y1="38"
-                                                      X2="122" Y2="38">
-                                <Line.Stroke>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Color="{StaticResource MainYellow}" Offset="0.1" />
-                                        <GradientStop Color="{StaticResource MainRed}" Offset="0.9" />
-                                    </LinearGradientBrush>
-                                </Line.Stroke>
-                            </Line>
-                            <Ellipse Width="16"
-                                                         Height="16"
-                                                         Fill="{StaticResource MainYellowBrush}"
-                                                         Canvas.Top="30"
-                                                         Canvas.Left="10"
-                                                         />
-                            <Ellipse Width="16"
-                                                         Height="16"
-                                                         Fill="{StaticResource MainRedBrush}"
-                                                         Canvas.Top="30"
-                                                         Canvas.Left="114"
-                                                         />
-
-                        </Canvas>
-
+                        <TextBlock Text="->" 
+                                   Margin="10"
+                                   Style="{StaticResource HeaderText}"
+                                   FontSize="{StaticResource FontSizeMedium}"/>
 
                     </Border>
 
@@ -148,7 +125,7 @@
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
+                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>
