@@ -70,7 +70,7 @@ namespace Airport
 
                 await Task.Delay(5000);
 
-                if (username != "admin" || key != "AbV12m3")
+                if (username != "admin" || key != "111")
                     return;
 
                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminFlights);

@@ -47,6 +47,7 @@
     <Reference Include="Ninject, Version=3.3.5.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.5\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="PropertyChanged, Version=3.4.0.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.3.4.0\lib\net40\PropertyChanged.dll</HintPath>
     </Reference>
@@ -78,6 +79,12 @@
     <Compile Include="AttachedPropeties\FrameworkElementAnimationAttachedProperties.cs" />
     <Compile Include="AttachedPropeties\IsBusyProperty.cs" />
     <Compile Include="AttachedPropeties\NoFrameHistoryAttachedProperty.cs" />
+    <Compile Include="Controls\Admin\AdminFlightsItemControl.cs">
+      <DependentUpon>AdminFlightsItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminFlightsListControl.xaml.cs">
+      <DependentUpon>AdminFlightsListControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PageHost.xaml.cs">
       <DependentUpon>PageHost.xaml</DependentUpon>
     </Compile>
@@ -107,6 +114,10 @@
     <Compile Include="ValueConverters\TimeToDisplayTimeConverter.cs" />
     <Compile Include="ViewModel\AdminFlights\AdminFlightsItemViewModel.cs" />
     <Compile Include="ViewModel\AdminFlights\AdminFlightsListViewModel.cs" />
+    <Compile Include="ViewModel\PlanesItemViewModel.cs" />
+    <Compile Include="ViewModel\CitiesItemViewModel.cs" />
+    <Compile Include="ViewModel\AdminFlights\Design\AdminFlightsItemDesignModel.cs" />
+    <Compile Include="ViewModel\AdminFlights\Design\AdminFlightsListDesignModel.cs" />
     <Compile Include="ViewModel\AdminLoginViewModel.cs" />
     <Compile Include="ViewModel\UserFlights\Design\UserFlightsItemDesignModel.cs" />
     <Compile Include="ViewModel\UserFlights\Design\UserFlightsListDesignModel.cs" />
@@ -116,6 +127,14 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
+    <Page Include="Controls\Admin\AdminFlightsItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Admin\AdminFlightsListControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\PageHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,9 +250,7 @@
   <ItemGroup>
     <Resource Include="Images\Backgrounds\plane-background_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Airport.NET\Airport.NET.csproj">
       <Project>{5a73bddb-2af8-45c6-aba7-a3e6b9462960}</Project>

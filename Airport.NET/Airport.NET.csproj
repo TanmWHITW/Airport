@@ -62,6 +62,9 @@
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\time.json" />
+    <None Include="data\planes.json" />
+    <None Include="data\data.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

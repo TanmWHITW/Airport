@@ -5,15 +5,74 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Airport"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1600" d:DesignWidth="1900"
       Title="AdminFlightsPage">
 
     <Grid>
-        <TextBlock Text="Admin Panel for Flights" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" 
-                   FontSize="{StaticResource FontSizeXL}" 
-                   Foreground="{StaticResource MainRedBrush}"
-                   FontFamily="{StaticResource MontserratBold}"/>
+        <Border Margin="20">
+            <StackPanel 
+                        >
+                <Border >
+                    <Grid Margin="20 20">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Admin Panel for Flights"      
+                           FontSize="{StaticResource FontSizeLarge}" 
+                           Foreground="{StaticResource ForegroundGreyDarkBrush}"
+                           FontFamily="{StaticResource MontserratBold}"
+                                       Margin="20 15 20 0"/>
+
+                            <ComboBox ItemsSource="{Binding Planes}"
+                                      DisplayMemberPath="Plane"
+                                      SelectedItem="{Binding Plane}"
+                                      FontFamily="{StaticResource MontserratBold}"
+                                      FontSize="{StaticResource FontSizeMedium}"
+                                      Padding="10 5"
+                                      Tag="Выберите самолет" HorizontalAlignment="Stretch"
+                                      Margin="20"
+                                 />
+                            <ComboBox ItemsSource="{Binding Cities}"
+                                      DisplayMemberPath="City"
+                                      SelectedItem="{Binding City}"
+                                      FontFamily="{StaticResource MontserratBold}"
+                                      FontSize="{StaticResource FontSizeMedium}"
+                                      Padding="10 5"
+                                      Margin="20 0 20 20"
+                                 Tag="ВЫберите город" HorizontalAlignment="Stretch"
+                                 />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+
+                            <TextBox Style="{StaticResource SearchTextBox}" 
+                                 Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                                 Tag="Введите номер рейса" HorizontalAlignment="Stretch"
+                                 />
+
+                            <TextBox Style="{StaticResource SearchTextBox}" 
+                             Text="{Binding ArrivalDateTime, UpdateSourceTrigger=PropertyChanged}"
+                             Tag="Введите время вылета" HorizontalAlignment="Stretch"
+                             />
+                            <TextBox Style="{StaticResource SearchTextBox}" 
+                             Text="{Binding Passengers, UpdateSourceTrigger=PropertyChanged}"
+                             Tag="Введите количество пассажиров" HorizontalAlignment="Stretch"
+                             />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Button Content="Добавить" 
+                        Command="{Binding AddNewFlightCommand}"
+                        />
+
+                <Button Content="Удалить выбранные" 
+                        Command="{Binding DeleteChosenFlightCommand}"
+                        />
+                <local:AdminFlightsListControl />
+            </StackPanel>
+        </Border>
     </Grid>
 </local:BasePage>
