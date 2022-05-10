@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows.Input;
 using System.IO;
 using Airport.NET;
+using System.Threading.Tasks;
 
 namespace Airport
 {
@@ -52,7 +53,7 @@ namespace Airport
 
         public string TodayMonth => DateTime.Now.ToString("MM", CultureInfo.InvariantCulture);
 
-
+        public bool IsItemsEmpty => !FilteredItems.Any();
         public ObservableCollection<UserFlightsItemViewModel> Items
         {
             get => mItems;
@@ -149,6 +150,7 @@ namespace Airport
         public ICommand SortArrivalCityCommand { get; set; }
         public ICommand SortPassengersCommand { get; set; }
 
+        public ICommand LogoutCommand { get; set; }
 
 
         public UserFlightsListViewModel()
@@ -161,6 +163,8 @@ namespace Airport
             SortPlaneCommand = new RelayCommand(SortPlane);
             SortDepartureDateCommand = new RelayCommand(SortDepartureDate);
             SortPassengersCommand = new RelayCommand(SortPassengers);
+            SortArrivalCityCommand = new RelayCommand(SortArrivalCity);
+            LogoutCommand = new RelayCommand(Logout);
 
             Items = new ObservableCollection<UserFlightsItemViewModel>();
 
@@ -171,24 +175,13 @@ namespace Airport
             SetTodayFlights(TodayDay, TodayMonth);
         }
 
-        public void SortId()
-        {
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Id));
-        }
-        public void SortPlane()
-        {
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Plane));
-        }
-        public void SortDepartureDate()
-        {
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.DepartureDateTime));
-        }
-        public void SortPassengers()
-        {
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Passengers));
-        }
+        public void SortId() => FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Id));
+        public void SortPlane() => FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Plane));
+        public void SortDepartureDate() => FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.DepartureDateTime));
+        public void SortArrivalCity() => FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.ArrivalCity));
+        public void SortPassengers() => FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems.OrderBy(o => o.Passengers));
 
-
+       
         public void SearchFlightId()
         {
 
@@ -256,6 +249,11 @@ namespace Airport
                 // Clear the text
                 SearchText = string.Empty;
             SearchFlightDate();
+        }
+
+        public void Logout()
+        {
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
         }
 
         #region Private Helpers

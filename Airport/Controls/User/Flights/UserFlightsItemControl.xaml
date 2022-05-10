@@ -16,10 +16,10 @@
         </Border.Background>
         <Grid Background="Transparent">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="2*" MaxWidth="200"/>
                 <ColumnDefinition Width="2*" MinWidth="120" MaxWidth="320"/>
-                <ColumnDefinition Width="1*" MinWidth="260"/>
+                <ColumnDefinition MinWidth="320" Width="*"/>
                 <ColumnDefinition Width="2*" MinWidth="120" MaxWidth="320"/>
                 <ColumnDefinition Width="1*" MaxWidth="150"/>
             </Grid.ColumnDefinitions>
@@ -88,19 +88,20 @@
                 </Border.BorderBrush>
                 <Grid HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="140" />
-                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <StackPanel VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"
-                                                    TextBlock.TextAlignment="Center">
+                                HorizontalAlignment="Center"
+                                TextBlock.TextAlignment="Center"
+                                Margin="5">
                         <TextBlock Text="{Binding DepartureAirport}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
+                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:ExpandedTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>
@@ -138,15 +139,16 @@
                     </Border>
 
                     <StackPanel Grid.Column="2"
-                                                    VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"
-                                                    TextBlock.TextAlignment="Center">
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                TextBlock.TextAlignment="Center"
+                                Margin="5">
                         <TextBlock Text="{Binding ArrivalAirport}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
                                                        Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:TimeToDisplayTimeConverter}}" 
+                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:ExpandedTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>

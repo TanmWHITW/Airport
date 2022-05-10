@@ -10,14 +10,14 @@ namespace Airport
     /// <summary>
     /// A converter that takes in date and converts it to a user friendly time
     /// </summary>
-    public class TimeToDisplayTimeConverter : BaseValueConverter<TimeToDisplayTimeConverter>
+    public class ExpandedTimeToDisplayTimeConverter : BaseValueConverter<ExpandedTimeToDisplayTimeConverter>
     {
 
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Get the time passed in
             var time = (DateTime)value;
-                return time.ToLocalTime().ToString("HH:mm");
+                return time.ToLocalTime().ToString("dd MMM HH:mm");
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

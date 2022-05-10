@@ -62,10 +62,10 @@
     <Compile Include="ViewModel\Base\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\time.json" />
-    <None Include="data\planes.json" />
-    <None Include="data\data.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.6.1\build\Fody.targets" Condition="Exists('..\packages\Fody.6.6.1\build\Fody.targets')" />

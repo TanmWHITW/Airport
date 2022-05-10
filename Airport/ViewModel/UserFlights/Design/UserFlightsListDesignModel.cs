@@ -20,11 +20,11 @@ namespace Airport
 
                     DepartureCity = "Москва",
                     DepartureAirport = "SVO",
-                    DepartureDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromDays(0)),
+                    DepartureDateTime = DateTime.UtcNow.Subtract(TimeSpan.FromDays(0)),
 
                     ArrivalCity = "Санкт-Петербург",
                     ArrivalAirport = "LED",
-                    ArrivalDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromDays(1.0)),
+                    ArrivalDateTime = DateTime.UtcNow.Subtract(TimeSpan.FromDays(1.0)),
 
                     Passengers = 110,
                 },
@@ -35,11 +35,11 @@ namespace Airport
 
                     DepartureCity = "Москва",
                     DepartureAirport = "SVO",
-                    DepartureDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromHours(1.3)),
+                    DepartureDateTime = DateTime.UtcNow.Subtract(TimeSpan.FromHours(1.3)),
 
                     ArrivalCity = "Екатеринбург",
                     ArrivalAirport = "SVX",
-                    ArrivalDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromHours(4.2)),
+                    ArrivalDateTime = DateTime.UtcNow.Subtract(TimeSpan.FromHours(4.2)),
 
                     Passengers = 154,
                 }

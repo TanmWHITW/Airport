@@ -98,9 +98,6 @@
       <DependentUpon>AdminFlightsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Base\BasePage.cs" />
-    <Compile Include="Pages\UserLoginPage.xaml.cs">
-      <DependentUpon>UserLoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\UserFlightsPage.cs">
       <DependentUpon>UserFlightsPage.xaml</DependentUpon>
     </Compile>
@@ -112,6 +109,7 @@
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\AdminTimeToDisplayTimeConverter.cs" />
+    <Compile Include="ValueConverters\ExpandedTimeToDisplayTimeConverter.cs" />
     <Compile Include="ValueConverters\TimeToDisplayTimeConverter.cs" />
     <Compile Include="ViewModel\AdminFlights\AdminFlightsItemViewModel.cs" />
     <Compile Include="ViewModel\AdminFlights\AdminFlightsListViewModel.cs" />
@@ -124,7 +122,6 @@
     <Compile Include="ViewModel\UserFlights\Design\UserFlightsListDesignModel.cs" />
     <Compile Include="ViewModel\UserFlights\UserFlightsItemViewModel.cs" />
     <Compile Include="ViewModel\UserFlights\UserFlightsListViewModel.cs" />
-    <Compile Include="ViewModel\UserLoginViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="Window\WindowResizer.cs" />
@@ -163,10 +160,6 @@
     <Page Include="Pages\AdminFlightsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\UserLoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\UserFlightsPage.xaml">
       <Generator>MSBuild:Compile</Generator>

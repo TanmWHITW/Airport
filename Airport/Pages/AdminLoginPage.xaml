@@ -45,7 +45,7 @@
                     </StackPanel>
                 </Border>
 
-                <Button Content="Я не админ блин..."
+                <Button Content="Посмотреть табло рейсов..."
                         HorizontalAlignment="Center"
                         Style="{StaticResource TextButton}" 
                         Command="{Binding UserLoginCommand}"

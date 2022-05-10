@@ -11,8 +11,6 @@ namespace Airport
         {
             switch((ApplicationPage)value)
             {
-                case ApplicationPage.UserLogin:
-                    return new UserLoginPage();
 
                 case ApplicationPage.AdminLogin:
                     return new AdminLoginPage();

@@ -83,7 +83,7 @@ namespace Airport
 
         public async Task UserLoginAsync()
         {
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.UserLogin);
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.UserFlights);
 
             await Task.Delay(1);
         }
