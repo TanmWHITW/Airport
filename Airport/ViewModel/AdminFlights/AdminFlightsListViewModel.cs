@@ -485,13 +485,13 @@ namespace Airport
             } ,
             new PlanesItemViewModel
             {
-                Plane = "Airbus А321",
+                Plane = "Airbus A321",
                 Id = 5,
                 MaxPassengers = 183,
             } ,
             new PlanesItemViewModel
             {
-                Plane = "Airbus А330-300",
+                Plane = "Airbus A330-300",
                 Id = 6,
                 MaxPassengers = 301,
             } ,

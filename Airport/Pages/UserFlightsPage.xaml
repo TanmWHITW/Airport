@@ -32,52 +32,61 @@
                 HorizontalAlignment="Right" 
                 VerticalAlignment="Top" 
                 Command="{Binding LogoutCommand}"/>
-        <Border Width="1000"
+        <Border
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Margin="0 30 20 50"
                     Grid.ColumnSpan="6">
-            <StackPanel Margin="0 0 0 40">
-                <Border Margin="0 10 0 40">
+            <StackPanel Margin="0 0 0 20"
+                         >
+                <Border Margin="0 10 0 40" Width="1000">
                     <TextBox Style="{StaticResource SearchTextBox}" 
                              Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                             Tag="Поиск по рейсу..." HorizontalAlignment="Stretch"
+                             Tag="Поиск по рейсу, времени вылета, самолету..." HorizontalAlignment="Stretch"
                              >
                         <TextBox.InputBindings>
                             <!-- Clear text on Esc -->
                             <KeyBinding Command="{Binding ClearSearchCommand}" Key="Esc" />
                             <!-- Search on enter -->
-                            <KeyBinding Command="{Binding SearchFlightIdCommand}" Key="Return" />
+                            <KeyBinding Command="{Binding SearchFlightsCommand}" Key="Return" />
                         </TextBox.InputBindings>
                     </TextBox>
                 </Border>
 
 
-                <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left">
+                <Border Width="600">
+                    <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0 20 0 30">
 
-                    <TextBlock Text="Список полетов на "
+                        <Button Content="{Binding PreviousDate, Converter={local:DateToDisplayTimeConverter}}" 
+                            Style="{StaticResource TextButton}"
+                            FontSize="{StaticResource FontSizeRegular}"
+                            FontFamily="{StaticResource MontserratRegular}"
+                            Padding="0"
+                            Margin="0 10"
+                                Command="{Binding SearchFlightPreviousDateCommand}"
+                            VerticalAlignment="Bottom"/>
+                        <TextBlock Text="{Binding CurrentDate, Converter={local:DateToDisplayTimeConverter}}" 
+                               Style="{StaticResource HeaderText}"
                                FontSize="{StaticResource FontSizeXL}"
-                               FontFamily="{StaticResource MontserratBold}"
-                               Foreground="{StaticResource ForegroundGreyDarkBrush}"/>
-                    <TextBox Tag="{Binding TodayDay}" 
-                             Style="{StaticResource Date}"
-                             Text="{Binding SearchDay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock Text="."
-                               FontSize="{StaticResource FontSizeXL}"
-                               FontFamily="{StaticResource MontserratBold}"
-                               Foreground="{StaticResource ForegroundGreyDarkBrush}"
-                               HorizontalAlignment="Center"/>
-                    <TextBox Tag="{Binding TodayMonth}" 
-                             Style="{StaticResource Date}"
-                             Text="{Binding SearchMonth, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Content=" >>"
-                            Command="{Binding SearchFlightDateCommand}"
-                            Style="{StaticResource TextButtonSearch}"/>
-                </StackPanel>
+                               Padding="0"
+                               Margin="30 0"
+                               VerticalAlignment="Center"
+                               />
+                        <Button Content="{Binding NextDate, Converter={local:DateToDisplayTimeConverter}}" 
+                            Style="{StaticResource TextButton}"
+                            Padding="0"
+                            Margin="0 10"
+                                Command="{Binding SearchFlightNextDateCommand}"
+                            VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Border>
+
                 <TextBlock Text="Летаем и слава Богу!"
                            FontSize="{StaticResource FontSizeXL}"
-                           HorizontalAlignment="Right"
+                           HorizontalAlignment="Center"
                            FontFamily="{StaticResource MontserratBold}"
                            Foreground="{StaticResource ForegroundGreyDarkBrush}"/>
 
