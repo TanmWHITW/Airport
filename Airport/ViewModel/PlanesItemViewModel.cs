@@ -11,6 +11,7 @@ namespace Airport
     {
         public string Plane { get; set; }
         public int Id { get; set; }
+        public string PlaneWithId { get; set; }
         public int MaxPassengers { get; set; }
     }
 }

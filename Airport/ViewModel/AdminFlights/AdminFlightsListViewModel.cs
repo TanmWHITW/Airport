@@ -19,7 +19,7 @@ namespace Airport
 
         public string Id { get; set; }
 
-        public PlanesItemViewModel Plane { get; set; } = null;
+        public PlanesItemViewModel Plane { get; set; }
 
         public string DepartureDateTime { get; set; }
 
@@ -532,72 +532,120 @@ namespace Airport
             {
                 Plane = "Airbus A320",
                 Id = 1,
+                PlaneWithId = "Airbus A320, 1",
                 MaxPassengers = 158,
             } ,
-            new PlanesItemViewModel
+           new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 20,
+                PlaneWithId = "Airbus A320, 20",
+                MaxPassengers = 158,
+            } ,new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 21,
+                PlaneWithId = "Airbus A320, 21",
+                MaxPassengers = 158,
+            } ,new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 23,
+                PlaneWithId = "Airbus A320, 23",
+                MaxPassengers = 158,
+            } ,new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 25,
+                PlaneWithId = "Airbus A320, 25",
+                MaxPassengers = 158,
+            } ,new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 24,
+                PlaneWithId = "Airbus A320, 24",
+                MaxPassengers = 158,
+            } ,new PlanesItemViewModel
+            {
+                Plane = "Airbus A320",
+                Id = 22,
+                PlaneWithId = "Airbus A320, 22",
+                MaxPassengers = 158,
+            } , new PlanesItemViewModel
             {
                 Plane = "Airbus A320neo",
                 Id = 2,
+                PlaneWithId = "Airbus A320neo, 2",
                 MaxPassengers = 164,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Airbus A321neo",
                 Id = 3,
+                PlaneWithId = "Airbus A321neo, 3",
                 MaxPassengers = 203,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Airbus A350-900",
                 Id = 4,
+                PlaneWithId = "Airbus A350-900, 4",
                 MaxPassengers = 316,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Airbus A321",
                 Id = 5,
+                PlaneWithId = "Airbus A321, 5",
                 MaxPassengers = 183,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Airbus A330-300",
                 Id = 6,
+                PlaneWithId = "Airbus A330-300, 6",
                 MaxPassengers = 301,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Boeing 737-400",
                 Id = 7,
+                PlaneWithId = "Boeing 737-400, 7",
                 MaxPassengers = 159,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Boeing 737-800",
                 Id = 8,
+                PlaneWithId = "Boeing 737-800, 8",
                 MaxPassengers = 158,
             },
             new PlanesItemViewModel
             {
                 Plane = "Boeing 767-200",
                 Id = 9,
+                PlaneWithId = "Boeing 767-200, 9",
                 MaxPassengers = 249,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Boeing 777-300ER",
                 Id = 10,
+                PlaneWithId = "Boeing 777-300ER, 10",
                 MaxPassengers = 402,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Embraer 170",
                 Id = 11,
+                PlaneWithId = "Embraer 170, 11",
                 MaxPassengers = 78,
             } ,
             new PlanesItemViewModel
             {
                 Plane = "Sukhoi SuperJet 100",
-                Id = 12,
+                Id = 99,
+                PlaneWithId = "Sukhoi SuperJet 100, 99",
                 MaxPassengers = 87,
             }
         };
@@ -645,6 +693,11 @@ namespace Airport
             if (!DateTime.TryParse(DepartureDateTime, out _))
             {
                 MessageBox.Show("Поле даты отправления содержит некорректные данные", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if(DateTime.Parse(DepartureDateTime) <= DateTime.Now)
+            {
+                MessageBox.Show("Задним числом мы даты не ставим", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (!Int32.TryParse(Passengers, out _))
