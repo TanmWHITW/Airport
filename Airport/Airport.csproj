@@ -104,7 +104,8 @@
     <Compile Include="Pages\AdminLoginPage.cs">
       <DependentUpon>AdminLoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ValueConverters\ExpandedTimeToDisplayTimeConverter - Копировать.cs" />
+    <Compile Include="ValueConverters\IdToDisplayConverter.cs" />
+    <Compile Include="ValueConverters\DateToDisplayTimeConverter.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />
     <Compile Include="ValueConverters\ApplicationPageValueConverter.cs" />
     <Compile Include="ValueConverters\Base\BaseValueConverter.cs" />

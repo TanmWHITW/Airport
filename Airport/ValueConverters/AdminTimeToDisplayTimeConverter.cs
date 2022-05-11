@@ -16,8 +16,11 @@ namespace Airport
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Get the time passed in
-            var time = (DateTimeOffset)value;
-                return time.ToLocalTime().ToString("dd.MM.yyyy HH:mm");
+            var time = (DateTime)value;
+            if (parameter == null)
+                return time.ToString("dd.MM.yyyy HH:mm");
+            else
+                return time.ToString("dd.MM.yyyy HH:mm (Местное время)");
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -10,6 +10,7 @@ namespace Airport
         {
             Id = "BONK228";
             Plane = "Broyler 777";
+            PlaneId = 1;
 
             DepartureCity = "Москва";
             DepartureAirport = "SVO";
@@ -17,7 +18,7 @@ namespace Airport
 
             ArrivalCity = "Санкт-Петербург";
             ArrivalAirport = "LED";
-            ArrivalDateTime = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromDays(1.3));
+            ArrivalDateTime = DateTime.UtcNow.Subtract(TimeSpan.FromDays(1.3));
 
             Passengers = 28;
         }

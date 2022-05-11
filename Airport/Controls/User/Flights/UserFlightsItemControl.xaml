@@ -149,8 +149,11 @@
                                                        Margin="0 -2 0 -4"
                                                        />
                         <TextBlock Text="{Binding ArrivalDateTime, Converter={local:ExpandedTimeToDisplayTimeConverter}}" 
-                                                       FontFamily="{StaticResource MontserratRegular}"
-                                                       />
+                                   FontFamily="{StaticResource MontserratRegular}">
+                            <TextBlock.ToolTip>
+                                <ToolTip Content="Показано местное для региона время" />
+                            </TextBlock.ToolTip>
+                        </TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>

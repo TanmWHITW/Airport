@@ -12,5 +12,6 @@ namespace Airport
         public string City { get; set; }  
         public string Airport { get; set; }
         public TimeSpan FlightTime { get; set; }
+        public TimeSpan TimeZoneDifference { get; set; }
     }
 }

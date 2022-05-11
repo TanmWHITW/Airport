@@ -11,7 +11,7 @@
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <local:AdminFlightsItemControl Height="76" Margin="0 10"/>
+                        <local:AdminFlightsItemControl Height="90" Margin="0 10"/>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>

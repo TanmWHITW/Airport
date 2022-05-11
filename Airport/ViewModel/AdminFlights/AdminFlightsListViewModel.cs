@@ -47,415 +47,484 @@ namespace Airport
             {
                 City = "Абакан",
                 Airport = "ABA",
-                FlightTime = TimeSpan.Parse("08:35:00"),
+                FlightTime = TimeSpan.Parse("04:35:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             },
             new CitiesItemViewModel
             {
                 City = "Анадырь",
                 Airport = "DYR",
-                FlightTime = TimeSpan.Parse("17:30:00"),
+                FlightTime = TimeSpan.Parse("05:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("12:00:00")
             },
             new CitiesItemViewModel
             {
                 City = "Анапа",
                 Airport = "AAQ",
                 FlightTime = TimeSpan.Parse("02:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             },
             new CitiesItemViewModel
             {
                 City = "Архангельск",
                 Airport = "ARH",
                 FlightTime = TimeSpan.Parse("03:00:00"),
-            } ,
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
+            },
             new CitiesItemViewModel
             {
                 City = "Астрахань",
                 Airport = "ASF",
-                FlightTime = TimeSpan.Parse("02:55:00"),
+                FlightTime = TimeSpan.Parse("01:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("01:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Барнаул",
                 Airport = "BAX",
-                FlightTime = TimeSpan.Parse("08:10:00"),
+                FlightTime = TimeSpan.Parse("04:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Белгород",
                 Airport = "EGO",
                 FlightTime = TimeSpan.Parse("01:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Благовещенск",
                 Airport = "BQS",
-                FlightTime = TimeSpan.Parse("13:30:00"),
+                FlightTime = TimeSpan.Parse("06:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("07:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Братск",
                 Airport = "BTK",
-                FlightTime = TimeSpan.Parse("10:05:00"),
+                FlightTime = TimeSpan.Parse("05:05:00"),
+                TimeZoneDifference = TimeSpan.Parse("05:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Брянск",
                 Airport = "BZK",
                 FlightTime = TimeSpan.Parse("01:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Варандей",
                 Airport = "VRI",
                 FlightTime = TimeSpan.Parse("02:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Владивосток",
                 Airport = "VVO",
-                FlightTime = TimeSpan.Parse("15:15:00"),
+                FlightTime = TimeSpan.Parse("08:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("07:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Владикавказ",
                 Airport = "OGZ",
                 FlightTime = TimeSpan.Parse("02:25:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Волгоград",
                 Airport = "VOG",
                 FlightTime = TimeSpan.Parse("01:45:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Воронеж",
                 Airport = "VOZ",
                 FlightTime = TimeSpan.Parse("01:05:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Грозный",
                 Airport = "GRV",
                 FlightTime = TimeSpan.Parse("02:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Екатеринбург",
                 Airport = "SVX",
-                FlightTime = TimeSpan.Parse("04:40:00"),
+                FlightTime = TimeSpan.Parse("02:40:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Иркутск",
                 Airport = "IKT",
-                FlightTime = TimeSpan.Parse("10:35:00"),
+                FlightTime = TimeSpan.Parse("05:35:00"),
+                TimeZoneDifference = TimeSpan.Parse("05:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Казань",
                 Airport = "KZN",
                 FlightTime = TimeSpan.Parse("01:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Калининград",
                 Airport = "KGD",
                 FlightTime = TimeSpan.Parse("00:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("-01:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Калуга",
                 Airport = "KLF",
                 FlightTime = TimeSpan.Parse("00:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Кемерово",
                 Airport = "KEJ",
-                FlightTime = TimeSpan.Parse("08:35:00"),
+                FlightTime = TimeSpan.Parse("04:35:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Краснодар",
                 Airport = "KRR",
                 FlightTime = TimeSpan.Parse("01:00:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Красноярск",
                 Airport = "KJA",
-                FlightTime = TimeSpan.Parse("08:35:00"),
+                FlightTime = TimeSpan.Parse("04:35:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Курган",
                 Airport = "KRO",
-                FlightTime = TimeSpan.Parse("04:50:00"),
+                FlightTime = TimeSpan.Parse("02:50:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Курск",
                 Airport = "URS",
                 FlightTime = TimeSpan.Parse("01:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Липецк",
                 Airport = "LPK",
                 FlightTime = TimeSpan.Parse("01:05:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Магадан",
                 Airport = "GDX",
-                FlightTime = TimeSpan.Parse("15:20:00"),
+                FlightTime = TimeSpan.Parse("07:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("08:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Магнитогорск",
                 Airport = "MQF",
-                FlightTime = TimeSpan.Parse("04:10:00"),
+                FlightTime = TimeSpan.Parse("02:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Махачкала",
                 Airport = "MCX",
                 FlightTime = TimeSpan.Parse("02:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Минеральные Воды",
                 Airport = "MRV",
                 FlightTime = TimeSpan.Parse("00:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Мурманск",
                 Airport = "MMK",
                 FlightTime = TimeSpan.Parse("02:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Нижневартовск",
                 Airport = "NJC",
-                FlightTime = TimeSpan.Parse("05:25:00"),
+                FlightTime = TimeSpan.Parse("03:25:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Нижнекамск",
                 Airport = "NBC",
                 FlightTime = TimeSpan.Parse("01:40:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Нижний Новгород",
                 Airport = "GOJ",
                 FlightTime = TimeSpan.Parse("01:05:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Новокузнецк",
                 Airport = "NOZ",
-                FlightTime = TimeSpan.Parse("08:15:00"),
+                FlightTime = TimeSpan.Parse("04:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Новосибирск",
                 Airport = "OVB",
-                FlightTime = TimeSpan.Parse("07:45:00"),
+                FlightTime = TimeSpan.Parse("03:45:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Омск",
                 Airport = "OMS",
-                FlightTime = TimeSpan.Parse("04:50:00"),
+                FlightTime = TimeSpan.Parse("01:50:00"),
+                TimeZoneDifference = TimeSpan.Parse("03:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Оренбург",
                 Airport = "REN",
-                FlightTime = TimeSpan.Parse("04:15:00"),
+                FlightTime = TimeSpan.Parse("02:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Орск",
                 Airport = "OSW",
-                FlightTime = TimeSpan.Parse("04:30:00"),
+                FlightTime = TimeSpan.Parse("02:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Пермь",
                 Airport = "PEE",
-                FlightTime = TimeSpan.Parse("03:55:00"),
+                FlightTime = TimeSpan.Parse("01:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Петрозаводск",
                 Airport = "PES",
                 FlightTime = TimeSpan.Parse("01:40:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Петропавловск-Камчатский",
                 Airport = "PKC",
-                FlightTime = TimeSpan.Parse("17:20:00"),
+                FlightTime = TimeSpan.Parse("08:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("09:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Псков",
                 Airport = "PKV",
                 FlightTime = TimeSpan.Parse("01:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Ростов-на-Дону",
                 Airport = "ROV",
                 FlightTime = TimeSpan.Parse("01:45:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Самара",
                 Airport = "KUF",
-                FlightTime = TimeSpan.Parse("02:25:00"),
+                FlightTime = TimeSpan.Parse("01:25:00"),
+                TimeZoneDifference = TimeSpan.Parse("01:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Санкт-Петербург",
                 Airport = "LED",
                 FlightTime = TimeSpan.Parse("01:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Саранск",
                 Airport = "SKX",
                 FlightTime = TimeSpan.Parse("01:25:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Саратов",
                 Airport = "GSV",
-                FlightTime = TimeSpan.Parse("02:30:00"),
+                FlightTime = TimeSpan.Parse("01:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("01:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Симферополь",
                 Airport = "SIP",
                 FlightTime = TimeSpan.Parse("01:25:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Сочи",
                 Airport = "AER",
                 FlightTime = TimeSpan.Parse("01:50:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Ставрополь",
                 Airport = "STW",
                 FlightTime = TimeSpan.Parse("02:00:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Сургут",
                 Airport = "SGC",
-                FlightTime = TimeSpan.Parse("05:10:00"),
+                FlightTime = TimeSpan.Parse("03:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Сыктывкар",
                 Airport = "SCW",
                 FlightTime = TimeSpan.Parse("01:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Томск",
                 Airport = "TOF",
-                FlightTime = TimeSpan.Parse("08:55:00"),
+                FlightTime = TimeSpan.Parse("04:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("04:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Тюмень",
                 Airport = "TJM",
-                FlightTime = TimeSpan.Parse("04:20:00"),
+                FlightTime = TimeSpan.Parse("02:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Улан-Удэ",
                 Airport = "UUD",
-                FlightTime = TimeSpan.Parse("10:45:00"),
+                FlightTime = TimeSpan.Parse("05:45:00"),
+                TimeZoneDifference = TimeSpan.Parse("05:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Ульяновск",
                 Airport = "ULV",
-                FlightTime = TimeSpan.Parse("02:30:00"),
+                FlightTime = TimeSpan.Parse("01:30:00"),
+                TimeZoneDifference = TimeSpan.Parse("01:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Уфа",
                 Airport = "UFA",
-                FlightTime = TimeSpan.Parse("03:50:00"),
+                FlightTime = TimeSpan.Parse("01:50:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Хабаровск",
                 Airport = "KHV",
-                FlightTime = TimeSpan.Parse("14:35:00"),
+                FlightTime = TimeSpan.Parse("07:35:00"),
+                TimeZoneDifference = TimeSpan.Parse("07:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Ханты-Мансийск",
                 Airport = "HMA",
-                FlightTime = TimeSpan.Parse("05:15:00"),
+                FlightTime = TimeSpan.Parse("03:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Чебоксары",
                 Airport = "CSY",
                 FlightTime = TimeSpan.Parse("01:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Челябинск",
                 Airport = "CEK",
-                FlightTime = TimeSpan.Parse("04:20:00"),
+                FlightTime = TimeSpan.Parse("02:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("02:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Череповец",
                 Airport = "CEE",
                 FlightTime = TimeSpan.Parse("00:50:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Чита",
                 Airport = "HTA",
-                FlightTime = TimeSpan.Parse("12:15:00"),
+                FlightTime = TimeSpan.Parse("06:15:00"),
+                TimeZoneDifference = TimeSpan.Parse("06:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Элиста",
                 Airport = "ESL",
                 FlightTime = TimeSpan.Parse("01:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Южно-Сахалинск",
                 Airport = "UUS",
-                FlightTime = TimeSpan.Parse("16:10:00"),
+                FlightTime = TimeSpan.Parse("08:10:00"),
+                TimeZoneDifference = TimeSpan.Parse("08:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Якутск",
                 Airport = "YKS",
-                FlightTime = TimeSpan.Parse("12:20:00"),
+                FlightTime = TimeSpan.Parse("06:20:00"),
+                TimeZoneDifference = TimeSpan.Parse("06:00:00")
             } ,
             new CitiesItemViewModel
             {
                 City = "Ярославль",
                 Airport = "IAR",
                 FlightTime = TimeSpan.Parse("00:55:00"),
+                TimeZoneDifference = TimeSpan.Parse("00:00:00")
             }
         };
         public List<PlanesItemViewModel> Planes { get; set; } = new List<PlanesItemViewModel> {
@@ -607,15 +676,17 @@ namespace Airport
 
             var flight = new AdminFlightsItemViewModel
             {
-                Id = City.City[0].ToString().ToUpper() + City.City[3].ToString().ToUpper() + Plane.Id.ToString().PadLeft(2,'0') + Id.PadLeft(4, '0'),
+                Id = City.City[0].ToString().ToUpper() + City.City[3].ToString().ToUpper() + Plane.Id.ToString().PadLeft(2, '0') + Id.PadLeft(4, '0'),
                 Plane = Plane.Plane,
                 PlaneId = Plane.Id,
                 DepartureAirport = "SVO",
-                DepartureCity   = "Москва",
-                DepartureDateTime = DateTimeOffset.Parse(DepartureDateTime),
+                DepartureCity = "Москва",
+                DepartureDateTime = DateTime.Parse(DepartureDateTime),
                 ArrivalAirport = City.Airport,
                 ArrivalCity = City.City,
-                ArrivalDateTime = DateTimeOffset.Parse(DepartureDateTime).Add(City.FlightTime),
+                ArrivalDateTime = DateTime.Parse(DepartureDateTime).Add(City.FlightTime + City.TimeZoneDifference),
+                ArrivingToDepartureCityDateTime = DateTime.Parse(DepartureDateTime).Add(City.FlightTime).Add(City.FlightTime + TimeSpan.FromMinutes(30)),
+                
                 Passengers = Int32.Parse(Passengers),
             };
             if (Items.Any(item => item.Id.Equals(flight.Id)))

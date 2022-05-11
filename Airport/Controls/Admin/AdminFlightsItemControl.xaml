@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Airport"
              mc:Ignorable="d" 
-             d:DesignHeight="76" d:DesignWidth="900">
+             d:DesignHeight="90" d:DesignWidth="900">
 
 
     <Border CornerRadius="10"
@@ -17,12 +17,10 @@
         <Grid Background="Transparent">
             <Grid.ColumnDefinitions>
                 
-                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="2*" MaxWidth="200"/>
-                <ColumnDefinition Width="2*" MinWidth="120" MaxWidth="320"/>
-                <ColumnDefinition Width="1*" MinWidth="260"/>
-                <ColumnDefinition Width="2*" MinWidth="120" MaxWidth="320"/>
-                <ColumnDefinition Width="1*" MaxWidth="150"/>
+                <ColumnDefinition Width="1*" MinWidth="600"/>
+                <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
@@ -50,14 +48,27 @@
                         <GradientStop Color="Transparent" Offset="0.9"/>
                     </LinearGradientBrush>
                 </Border.BorderBrush>
-                <TextBlock Padding="5 0"
+                <StackPanel VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+
+                    <TextBlock Padding="5 0"
                                                Text="{Binding Plane}" 
                                                FontFamily="{StaticResource MontserratRegular}"
                                                FontSize="{StaticResource FontSizeRegular}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Center"
                                                TextTrimming="CharacterEllipsis"
                                                />
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <TextBlock Text="ID самолета: "
+                               FontSize="12"
+                               FontFamily="{StaticResource MontserratRegular}"
+                                   />
+                        <TextBlock Text="{Binding PlaneId}"
+                               FontSize="12"
+                               FontFamily="{StaticResource MontserratRegular}"
+                               />
+                    </StackPanel>
+                </StackPanel>
             </Border>
 
             <Border Grid.Column="2"
@@ -69,89 +80,109 @@
                         <GradientStop Color="Transparent" Offset="0.9"/>
                     </LinearGradientBrush>
                 </Border.BorderBrush>
-                <TextBlock 
-                                               Text="{Binding DepartureCity}" 
-                                               FontFamily="{StaticResource MontserratRegular}"
-                                               FontSize="{StaticResource FontSizeRegular}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Center"
-                                               TextTrimming="CharacterEllipsis"
-                                               />
-            </Border>
+                <Grid>
+                    
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Panel.ZIndex="1">
+                    <Border>
+                        <StackPanel TextBlock.TextAlignment="Center" 
+                                HorizontalAlignment="Right">
+                            <Border
+                                Background="{StaticResource MainYellowBrush}"
+                                CornerRadius="10"
+                                Padding="25 4">
+                                <StackPanel>
 
-            <Border Grid.Column="3"
-                                        BorderThickness="0 0 1 0">
-                <Border.BorderBrush>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="Transparent" Offset="0.1"/>
-                        <GradientStop Color="{StaticResource ForegroundWhite}" Offset="0.5"/>
-                        <GradientStop Color="Transparent" Offset="0.9"/>
-                    </LinearGradientBrush>
-                </Border.BorderBrush>
-                <Grid HorizontalAlignment="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"
-                                                    TextBlock.TextAlignment="Center">
-                        <TextBlock Text="{Binding DepartureAirport}" 
+                                    <TextBlock Text="{Binding DepartureCity}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
-                                                       Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding DepartureDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
+                                    <TextBlock Text="{Binding DepartureAirport}" 
+                                                       FontFamily="{StaticResource MontserratBold}"
+                                                       FontSize="{StaticResource FontSizeRegular}"
+                                                       />
+                                </StackPanel>
+                            </Border>
+
+                            <TextBlock Text="{Binding DepartureDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
+                                                      Margin="0 5 0 0" />
+
+                        </StackPanel>
+                    </Border>
+                    <Border
+                            Width="270">
+                        <StackPanel TextBlock.TextAlignment="Center" 
+                                     HorizontalAlignment="Center"
+                                    >
+                            <Border
+                                Background="{StaticResource MainYellowBrush}"
+                                CornerRadius="10"
+                                Padding="25 4"
+                                Width="200">
+                                <StackPanel>
+
+                                    <TextBlock Text="{Binding ArrivalCity}" 
+                                                       FontFamily="{StaticResource MontserratBold}"
+                                                       FontSize="{StaticResource FontSizeRegular}"
                                                        />
-                    </StackPanel>
+                                    <TextBlock Text="{Binding ArrivalAirport}" 
+                                                       FontFamily="{StaticResource MontserratBold}"
+                                                       FontSize="{StaticResource FontSizeRegular}"
+                                                       />
+                                </StackPanel>
+                            </Border>
 
-                    <Border Grid.Column="1">
+                            <TextBlock Text="{Binding ArrivalDateTime, Converter={local:AdminTimeToDisplayTimeConverter}, ConverterParameter=True}" 
+                                                       FontFamily="{StaticResource MontserratRegular}"
+                                       Margin="0 5 0 0"
+                                                       />
 
-                        <TextBlock Text="->" 
-                                   Margin="10"
-                                   Style="{StaticResource HeaderText}"
-                                   FontSize="{StaticResource FontSizeMedium}"/>
-
+                        </StackPanel>
                     </Border>
 
-                    <StackPanel Grid.Column="2"
-                                                    VerticalAlignment="Center"
-                                                    HorizontalAlignment="Center"
-                                                    TextBlock.TextAlignment="Center">
-                        <TextBlock Text="{Binding ArrivalAirport}" 
+                    <Border>
+                        <StackPanel TextBlock.TextAlignment="Center" 
+                                HorizontalAlignment="Left">
+                            <Border
+                                Background="{StaticResource MainYellowBrush}"
+                                CornerRadius="10"
+                                Padding="25 4">
+                                <StackPanel>
+
+                                    <TextBlock Text="{Binding DepartureCity}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
-                                                       Margin="0 -2 0 -4"
                                                        />
-                        <TextBlock Text="{Binding ArrivalDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
+                                    <TextBlock Text="{Binding DepartureAirport}" 
+                                                       FontFamily="{StaticResource MontserratBold}"
+                                                       FontSize="{StaticResource FontSizeRegular}"
+                                                       />
+                                </StackPanel>
+                            </Border>
+                            
+                            <TextBlock Text="{Binding ArrivingToDepartureCityDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
-                                                       />
-                    </StackPanel>
+                                                      Margin="0 5 0 0" />
+
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+                    <Canvas Width="300"
+                            Panel.ZIndex="2"
+                            Height="4"
+                            VerticalAlignment="Center"
+                            Margin="0 0 0 20">
+                        <Path  Fill="{StaticResource MainYellowBrush}" Data="M 0 0 L 10 10 L 0 20 Z" Margin="29 -8"/>
+                        <Path  Fill="{StaticResource MainYellowBrush}" Data="M 0 0 L 10 10 L 0 20 Z" Margin="263 -8"/>
+
+                    </Canvas>
                 </Grid>
             </Border>
-
-            <Border Grid.Column="4"
-                                        BorderThickness="0 0 1 0">
-                <Border.BorderBrush>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                        <GradientStop Color="Transparent" Offset="0.1"/>
-                        <GradientStop Color="{StaticResource ForegroundWhite}" Offset="0.5"/>
-                        <GradientStop Color="Transparent" Offset="0.9"/>
-                    </LinearGradientBrush>
-                </Border.BorderBrush>
-                <TextBlock Padding="5 0"
-                                               Text="{Binding ArrivalCity}" 
-                                               FontFamily="{StaticResource MontserratRegular}"
-                                               FontSize="{StaticResource FontSizeRegular}"
-                                               VerticalAlignment="Center"
-                                               HorizontalAlignment="Center"
-                                               TextTrimming="CharacterEllipsis"
-                                               />
-            </Border>
-
-            <Border Grid.Column="5"
+            <Border Grid.Column="3"
                     BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -170,7 +201,7 @@
                                                />
             </Border>
 
-            <Border Grid.Column="6">
+            <Border Grid.Column="4">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                         <GradientStop Color="Transparent" Offset="0.1"/>

@@ -10,14 +10,13 @@ namespace Airport
     /// <summary>
     /// A converter that takes in date and converts it to a user friendly time
     /// </summary>
-    public class TimeToDisplayTimeConverter : BaseValueConverter<TimeToDisplayTimeConverter>
+    public class IdToDisplayConverter : BaseValueConverter<IdToDisplayConverter>
     {
 
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // Get the time passed in
-            var time = (DateTime)value;
-                return time.ToString("HH:mm");
+            var id = (string)value;
+                return "ID самолета: " + id;
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

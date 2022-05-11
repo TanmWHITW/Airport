@@ -17,7 +17,7 @@ namespace Airport
         {
             // Get the time passed in
             var time = (DateTime)value;
-                return time.ToLocalTime().ToString("dd MMM HH:mm");
+                return time.ToString("dd MMM HH:mm");
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

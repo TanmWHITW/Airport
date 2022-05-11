@@ -19,17 +19,19 @@ namespace Airport
 
         public string DepartureAirport { get; set; }
 
-        public DateTimeOffset DepartureDateTime { get; set; }
+        public DateTime DepartureDateTime { get; set; }
 
         public string ArrivalCity { get; set; }
 
         public string ArrivalAirport { get; set; }
 
-        public DateTimeOffset ArrivalDateTime { get; set; }
+        public DateTime ArrivalDateTime { get; set; }
 
         public int Passengers { get; set; }
 
         public bool IsChosen { get; set; } = false;
+
+        public DateTime ArrivingToDepartureCityDateTime { get; set; } 
 
 
     }

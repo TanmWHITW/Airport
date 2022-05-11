@@ -161,7 +161,15 @@ namespace Airport
 
                 return;
             }
+            if (DateTime.TryParse(SearchText.Substring(0, 1), out _))
+            {
+                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
+                    Items.Where(item => item.DepartureDateTime.ToString().Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)));
 
+                // Set last search text
+                mLastSearchText = SearchText;
+                return;
+            }
             if (DateTime.TryParse(SearchText, out _))
             {
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
