@@ -692,12 +692,12 @@ namespace Airport
             }
             if (!DateTime.TryParse(DepartureDateTime, out _))
             {
-                MessageBox.Show("Поле даты отправления содержит некорректные данные", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Поле даты отправления содержит некорректные данные\nПример ввода данных:\n15:00 (для сегодняшенго дня)\n29.02.20 12:00 (для установки конкретной даты)", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if(DateTime.Parse(DepartureDateTime) <= DateTime.Now)
             {
-                MessageBox.Show("Задним числом мы даты не ставим", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Дата не может быть прошедшей", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (!Int32.TryParse(Passengers, out _))
