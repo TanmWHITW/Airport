@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace Airport
 {
     /// <summary>
@@ -22,11 +21,9 @@ namespace Airport
     public partial class MainWindow : Window
     {
         public ApplicationViewModel ApplicationViewModel => new ApplicationViewModel();
-
         public MainWindow()
         {
             InitializeComponent();
-
             this.DataContext = new WindowViewModel(this);
         }
     }

@@ -4,12 +4,10 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
-
 /// <summary>
 /// Does not need tests
 /// TO DO: skipping!
 /// </summary>
-
 namespace Airport
 {
     /// <summary>
@@ -30,71 +28,53 @@ namespace Airport
         /// </summary>
         Right,
     }
-
     /// <summary>
     /// Fixes the issue with Windows of Style <see cref="WindowStyle.None"/> covering the taskbar
     /// </summary>
     public class WindowResizer
     {
         #region Private Members
-
         /// <summary>
         /// The window to handle the resizing for
         /// </summary>
         private Window mWindow;
-
         /// <summary>
         /// The last calculated available screen size
         /// </summary>
         private Rect mScreenSize = new Rect();
-
         /// <summary>
         /// How close to the edge the window has to be to be detected as at the edge of the screen
         /// </summary>
         private int mEdgeTolerance = 2;
-
         /// <summary>
         /// The transform matrix used to convert WPF sizes to screen pixels
         /// </summary>
         private Matrix mTransformToDevice;
-
         /// <summary>
         /// The last screen the window was on
         /// </summary>
         private IntPtr mLastScreen;
-
         /// <summary>
         /// The last known dock position
         /// </summary>
         private WindowDockPosition mLastDock = WindowDockPosition.Undocked;
-
         #endregion
-
         #region Dll Imports
-
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool GetCursorPos(out POINT lpPoint);
-
         [DllImport("user32.dll")]
         static extern bool GetMonitorInfo(IntPtr hMonitor, MONITORINFO lpmi);
-
         [DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr MonitorFromPoint(POINT pt, MonitorOptions dwFlags);
-
         #endregion
-
         #region Public Events
-
         /// <summary>
         /// Called when the window dock position changes
         /// </summary>
         public event Action<WindowDockPosition> WindowDockChanged = (dock) => { };
-
         #endregion
-
         #region Constructor
-
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -103,21 +83,15 @@ namespace Airport
         public WindowResizer(Window window)
         {
             mWindow = window;
-
             // Create transform visual (for converting WPF size to pixel size)
             GetTransform();
-
             // Listen out for source initialized to setup
             mWindow.SourceInitialized += Window_SourceInitialized;
-
             // Monitor for edge docking
             mWindow.SizeChanged += Window_SizeChanged;
         }
-
         #endregion
-
         #region Initialize
-
         /// <summary>
         /// Gets the transform object used to convert WPF sizes to screen pixels
         /// </summary>
@@ -125,18 +99,14 @@ namespace Airport
         {
             // Get the visual source
             var source = PresentationSource.FromVisual(mWindow);
-
             // Reset the transform to default
             mTransformToDevice = default;
-
             // If we cannot get the source, ignore
             if (source == null)
                 return;
-
             // Otherwise, get the new transform object
             mTransformToDevice = source.CompositionTarget.TransformToDevice;
         }
-
         /// <summary>
         /// Initialize and hook into the windows message pump
         /// </summary>
@@ -147,19 +117,14 @@ namespace Airport
             // Get the handle of this window
             var handle = (new WindowInteropHelper(mWindow)).Handle;
             var handleSource = HwndSource.FromHwnd(handle);
-
             // If not found, end
             if (handleSource == null)
                 return;
-
             // Hook into it's Windows messages
             handleSource.AddHook(WindowProc);
         }
-
         #endregion
-
         #region Edge Docking
-
         /// <summary>
         /// Monitors for size changes and detects if the window has been docked (Aero snap) to an edge
         /// </summary>
@@ -170,29 +135,23 @@ namespace Airport
             // We cannot find positioning until the window transform has been established
             if (mTransformToDevice == default)
                 return;
-
             // Get the WPF size
             var size = e.NewSize;
-
             // Get window rectangle
             var top = mWindow.Top;
             var left = mWindow.Left;
             var bottom = top + size.Height;
             var right = left + mWindow.Width;
-
             // Get window position/size in device pixels
             var windowTopLeft = mTransformToDevice.Transform(new Point(left, top));
             var windowBottomRight = mTransformToDevice.Transform(new Point(right, bottom));
-
             // Check for edges docked
             var edgedTop = windowTopLeft.Y <= (mScreenSize.Top + mEdgeTolerance);
             var edgedLeft = windowTopLeft.X <= (mScreenSize.Left + mEdgeTolerance);
             var edgedBottom = windowBottomRight.Y >= (mScreenSize.Bottom - mEdgeTolerance);
             var edgedRight = windowBottomRight.X >= (mScreenSize.Right - mEdgeTolerance);
-
             // Get docked position
             WindowDockPosition dock;
-
             // Left docking
             if (edgedTop && edgedBottom && edgedLeft)
                 dock = WindowDockPosition.Left;
@@ -201,20 +160,15 @@ namespace Airport
             // None
             else
                 dock = WindowDockPosition.Undocked;
-
             // If dock has changed
             if (dock != mLastDock)
                 // Inform listeners
                 WindowDockChanged(dock);
-
             // Save last dock position
             mLastDock = dock;
         }
-
         #endregion
-
         #region Windows Proc
-
         /// <summary>
         /// Listens out for all windows messages for this window
         /// </summary>
@@ -234,12 +188,9 @@ namespace Airport
                     handled = true;
                     break;
             }
-
             return (IntPtr)0;
         }
-
         #endregion
-
         /// <summary>
         /// Get the min/max window size for this window
         /// Correctly accounting for the taskbar size and position
@@ -250,28 +201,21 @@ namespace Airport
         {
             // Get the point position to determine what screen we are on
             GetCursorPos(out POINT lMousePosition);
-
             // Get the primary monitor at cursor position 0,0
             var lPrimaryScreen = MonitorFromPoint(new POINT(0, 0), MonitorOptions.MONITOR_DEFAULTTOPRIMARY);
-
             // Try and get the primary screen information
             var lPrimaryScreenInfo = new MONITORINFO();
             if (GetMonitorInfo(lPrimaryScreen, lPrimaryScreenInfo) == false)
                 return;
-
             // Now get the current screen
             var lCurrentScreen = MonitorFromPoint(lMousePosition, MonitorOptions.MONITOR_DEFAULTTONEAREST);
-
             // If this has changed from the last one, update the transform
             if (lCurrentScreen != mLastScreen || mTransformToDevice == default)
                 GetTransform();
-
             // Store last know screen
             mLastScreen = lCurrentScreen;
-
             // Get min/max structure to fill with information
             var lMmi = (MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
-
             // If it is the primary screen, use the rcWork variable
             if (lPrimaryScreen.Equals(lCurrentScreen) == true)
             {
@@ -288,31 +232,23 @@ namespace Airport
                 lMmi.ptMaxSize.X = lPrimaryScreenInfo.rcMonitor.Right - lPrimaryScreenInfo.rcMonitor.Left;
                 lMmi.ptMaxSize.Y = lPrimaryScreenInfo.rcMonitor.Bottom - lPrimaryScreenInfo.rcMonitor.Top;
             }
-
             // Set min size
             var minSize = mTransformToDevice.Transform(new Point(mWindow.MinWidth, mWindow.MinHeight));
-
             lMmi.ptMinTrackSize.X = (int)minSize.X;
             lMmi.ptMinTrackSize.Y = (int)minSize.Y;
-
             // Store new size
             mScreenSize = new Rect(lMmi.ptMaxPosition.X, lMmi.ptMaxPosition.Y, lMmi.ptMaxSize.X, lMmi.ptMaxSize.Y);
-
             // Now we have the max size, allow the host to tweak as needed
             Marshal.StructureToPtr(lMmi, lParam, true);
         }
     }
-
     #region Dll Helper Structures
-
     enum MonitorOptions : uint
     {
         MONITOR_DEFAULTTONULL = 0x00000000,
         MONITOR_DEFAULTTOPRIMARY = 0x00000001,
         MONITOR_DEFAULTTONEAREST = 0x00000002
     }
-
-
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
     public class MONITORINFO
     {
@@ -321,13 +257,10 @@ namespace Airport
         public Rectangle rcWork = new Rectangle();
         public int dwFlags = 0;
     }
-
-
     [StructLayout(LayoutKind.Sequential)]
     public struct Rectangle
     {
         public int Left, Top, Right, Bottom;
-
         public Rectangle(int left, int top, int right, int bottom)
         {
             this.Left = left;
@@ -336,7 +269,6 @@ namespace Airport
             this.Bottom = bottom;
         }
     }
-
     [StructLayout(LayoutKind.Sequential)]
     public struct MINMAXINFO
     {
@@ -346,7 +278,6 @@ namespace Airport
         public POINT ptMinTrackSize;
         public POINT ptMaxTrackSize;
     };
-
     [StructLayout(LayoutKind.Sequential)]
     public struct POINT
     {
@@ -358,7 +289,6 @@ namespace Airport
         /// y coordinate of point.
         /// </summary>
         public int Y;
-
         /// <summary>
         /// Construct a point of coordinates (x,y).
         /// </summary>
@@ -368,6 +298,5 @@ namespace Airport
             this.Y = y;
         }
     }
-
     #endregion
 }

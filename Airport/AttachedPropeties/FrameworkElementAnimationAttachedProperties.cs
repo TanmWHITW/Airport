@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-
 namespace Airport
 {
     /// <summary>
@@ -11,24 +10,19 @@ namespace Airport
         where Parent : BaseAttachedProperty<Parent, bool>, new()
     {
         #region Public Properties
-
         /// <summary>
         /// A flag indicating if this is the first time this property has been loaded
         /// </summary>
         public bool FirstLoad { get; set; } = true;
-
         #endregion
-
         public override void OnValueUpdated(DependencyObject sender, object value)
         {
             // Get the framework element
             if (!(sender is FrameworkElement element))
                 return;
-
             // Don't fire if the value doesn't change
             if (sender.GetValue(ValueProperty) == value && !FirstLoad)
                 return;
-
             // On first load...
             if (FirstLoad)
             {
@@ -39,14 +33,11 @@ namespace Airport
                 {
                     // Unhook ourselves
                     element.Loaded -= onLoaded;
-
                     // Do desired animation
                     DoAnimation(element, (bool)value);
-
                     // No longer in first load
                     FirstLoad = false;
                 };
-
                 // Hook into the Loaded event of the element
                 element.Loaded += onLoaded;
             }
@@ -54,7 +45,6 @@ namespace Airport
                 // Do desired animation
                 DoAnimation(element, (bool)value);
         }
-
         /// <summary>
         /// The animation method that is fired when the value changes
         /// </summary>
@@ -62,7 +52,6 @@ namespace Airport
         /// <param name="value">The new value</param>
         protected virtual void DoAnimation(FrameworkElement element, bool value) { }
     }
-
     /// <summary>
     /// Animates a framework element sliding it in from the left on show
     /// and sliding out to the left on hide

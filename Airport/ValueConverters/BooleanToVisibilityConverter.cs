@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows;
-
 namespace Airport
 {
     /// <summary>
@@ -16,7 +15,6 @@ namespace Airport
             else 
                 return (bool)value ? Visibility.Visible : Visibility.Hidden;
         }
-
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

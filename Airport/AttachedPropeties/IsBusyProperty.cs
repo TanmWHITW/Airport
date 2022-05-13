@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Airport
 {
     /// <summary>
@@ -11,6 +10,5 @@ namespace Airport
     /// </summary>
     public class IsBusyProperty : BaseAttachedProperty<IsBusyProperty, bool>
     {
-
     }
 }

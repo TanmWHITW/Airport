@@ -7,26 +7,17 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-
 namespace Airport
 {
     public class AdminFlightsListViewModel : BaseViewModel
     {
-
         private readonly string filePath = "C:/Users/Public/Documents/data.json";
-
         protected ObservableCollection<AdminFlightsItemViewModel> mItems;
-
         public string Id { get; set; }
-
         public PlanesItemViewModel Plane { get; set; }
-
         public string DepartureDateTime { get; set; }
-
         public CitiesItemViewModel City { get; set; } = null;
-
         public string Passengers { get; set; }
-
         public ObservableCollection<AdminFlightsItemViewModel> Items
         {
             get => mItems;
@@ -35,13 +26,10 @@ namespace Airport
                 // Make sure list has changed
                 if (mItems == value)
                     return;
-
                 // Update value
                 mItems = value;
-
             }
         }
-
         public List<CitiesItemViewModel> Cities { get; set; } = new List<CitiesItemViewModel> {
             new CitiesItemViewModel
             {
@@ -649,20 +637,16 @@ namespace Airport
                 MaxPassengers = 87,
             }
         };
-
         public ICommand AddNewFlightCommand { get; set; }
         public ICommand DeleteChosenFlightCommand { get; set; }
         public ICommand LogoutCommand { get; set; }
-
         public AdminFlightsListViewModel()
         {
             AddNewFlightCommand = new RelayCommand(AddNewFlight);
             DeleteChosenFlightCommand = new RelayCommand(DeleteChosenFlight);
             LogoutCommand = new RelayCommand(Logout);
-
             LoadData(filePath);
         }
-
         public void AddNewFlight()
         {
             if (string.IsNullOrEmpty(Id))
@@ -726,7 +710,6 @@ namespace Airport
             }
             if (Items == null)
                 Items = new ObservableCollection<AdminFlightsItemViewModel>();
-
             var flight = new AdminFlightsItemViewModel
             {
                 Id = City.City[0].ToString().ToUpper() + City.City[3].ToString().ToUpper() + Plane.Id.ToString().PadLeft(2, '0') + Id.PadLeft(4, '0'),
@@ -739,7 +722,6 @@ namespace Airport
                 ArrivalCity = City.City,
                 ArrivalDateTime = DateTime.Parse(DepartureDateTime).Add(City.FlightTime + City.TimeZoneDifference),
                 ArrivingToDepartureCityDateTime = DateTime.Parse(DepartureDateTime).Add(City.FlightTime).Add(City.FlightTime + TimeSpan.FromMinutes(30)),
-                
                 Passengers = Int32.Parse(Passengers),
             };
             if (Items.Any(item => item.Id.Equals(flight.Id)))
@@ -752,7 +734,6 @@ namespace Airport
             Items.Add(flight);
             UploadData(filePath);
         }
-
         public void DeleteChosenFlight()
         {
             foreach (var item in Items.ToArray())
@@ -760,12 +741,10 @@ namespace Airport
                     Items.Remove(item);
             UploadData(filePath);
         }
-
         public void Logout()
         {
             IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
         }
-
         private void LoadData(string path)
         {
             if (File.Exists(path))
@@ -775,6 +754,5 @@ namespace Airport
             }
         }
         private void UploadData(string path) => File.WriteAllText(path, JsonConvert.SerializeObject(Items));
-
     }
 }

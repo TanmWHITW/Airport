@@ -3,12 +3,10 @@ using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-
 /// <summary>
 /// Can write test cases already
 /// TO DO: not done!
 /// </summary>
-
 namespace Airport.NET
 {
     /// <summary>
@@ -21,7 +19,6 @@ namespace Airport.NET
         /// The event that is fired when any child property changes its value
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-
         /// <summary>
         /// Call this to fire a <see cref="PropertyChanged"/> event
         /// </summary>
@@ -30,9 +27,7 @@ namespace Airport.NET
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
-
         #region Command Helpers
-
         /// <summary>
         /// Runs a command if the updating flag is not set.
         /// If the flag is true (indicating the function is already running) then the action is not run.
@@ -47,10 +42,8 @@ namespace Airport.NET
             // Check if the flag property is true (meaning the function is already running)
             if (updatingFlag.GetPropertyValue())
                 return;
-
             // Set the property flag to true to indicate we are running
             updatingFlag.SetPropertyValue(true);
-
             try
             {
                 // Run the passed in action
@@ -62,7 +55,6 @@ namespace Airport.NET
                 updatingFlag.SetPropertyValue(false);
             }
         }
-
         #endregion
     }
 }

@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-
 namespace Airport
 {
     class IoCConverter : BaseValueConverter<IoCConverter>
@@ -13,13 +12,11 @@ namespace Airport
             {
                 case nameof(ApplicationViewModel):
                     return IoC.Get<ApplicationViewModel>();
-
                 default:
                     Debugger.Break();
                     return null;
             }
         }
-
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

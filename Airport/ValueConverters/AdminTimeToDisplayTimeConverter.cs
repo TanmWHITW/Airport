@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Airport
 {
     /// <summary>
@@ -12,7 +11,6 @@ namespace Airport
     /// </summary>
     public class AdminTimeToDisplayTimeConverter : BaseValueConverter<AdminTimeToDisplayTimeConverter>
     {
-
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // Get the time passed in
@@ -22,11 +20,9 @@ namespace Airport
             else
                 return time.ToString("dd.MM.yyyy HH:mm (Местное время)");
         }
-
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
-
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Animation;
-
 namespace Airport
 {
     /// <summary>
@@ -20,23 +19,17 @@ namespace Airport
         {
             // Create the storyboard
             var sb = new Storyboard();
-
             // Add slide from right animation
             sb.AddSlideFromRight(seconds, element.ActualWidth, keepMargin: keepMargin);
-
             // Add fade in animation
             sb.AddFadeIn(seconds);
-
             // Start animating
             sb.Begin(element);
-
             // Make page visible
             element.Visibility = Visibility.Visible;
-
             // Wait for it to finish
             await Task.Delay((int)(seconds * 1000));
         }
-
         /// <summary>
         /// Slides an element in from the right
         /// </summary>
@@ -48,23 +41,17 @@ namespace Airport
         {
             // Create the storyboard
             var sb = new Storyboard();
-
             // Add slide from right animation
             sb.AddSlideFromLeft(seconds, element.ActualWidth, keepMargin: keepMargin);
-
             // Add fade in animation
             sb.AddFadeIn(seconds);
-
             // Start animating
             sb.Begin(element);
-
             // Make page visible
             element.Visibility = Visibility.Visible;
-
             // Wait for it to finish
             await Task.Delay((int)(seconds * 1000));
         }
-
         /// <summary>
         /// Slides an element out to the left
         /// </summary>
@@ -76,23 +63,17 @@ namespace Airport
         {
             // Create the storyboard
             var sb = new Storyboard();
-
             // Add slide from right animation
             sb.AddSlideToLeft(seconds, element.ActualWidth, keepMargin: keepMargin);
-
             // Add fade in animation
             sb.AddFadeOut(seconds);
-
             // Start animating
             sb.Begin(element);
-
             // Make page visible
             element.Visibility = Visibility.Visible;
-
             // Wait for it to finish
             await Task.Delay((int)(seconds * 1000));
         }
-
         /// <summary>
         /// Slides an element out to the right
         /// </summary>
@@ -104,19 +85,14 @@ namespace Airport
         {
             // Create the storyboard
             var sb = new Storyboard();
-
             // Add slide from right animation
             sb.AddSlideToRight(seconds, element.ActualWidth, keepMargin: keepMargin);
-
             // Add fade in animation
             sb.AddFadeOut(seconds);
-
             // Start animating
             sb.Begin(element);
-
             // Make page visible
             element.Visibility = Visibility.Visible;
-
             // Wait for it to finish
             await Task.Delay((int)(seconds * 1000));
         }

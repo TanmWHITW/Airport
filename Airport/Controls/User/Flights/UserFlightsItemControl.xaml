@@ -6,8 +6,6 @@
              xmlns:local="clr-namespace:Airport"
              mc:Ignorable="d" 
              d:DesignHeight="76" d:DesignWidth="900">
-
-
     <Border CornerRadius="10"
             x:Name="background"
             d:DataContext="{x:Static local:UserFlightsItemDesignModel.Instance}">
@@ -23,7 +21,6 @@
                 <ColumnDefinition Width="2*" MinWidth="120" MaxWidth="320"/>
                 <ColumnDefinition Width="1*" MaxWidth="150"/>
             </Grid.ColumnDefinitions>
-
             <Border BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -57,7 +54,6 @@
                                                TextTrimming="CharacterEllipsis"
                                                />
             </Border>
-
             <Border Grid.Column="2"
                                         BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
@@ -76,7 +72,6 @@
                                                TextTrimming="CharacterEllipsis"
                                                />
             </Border>
-
             <Border Grid.Column="3"
                                         BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
@@ -105,10 +100,8 @@
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                        />
                     </StackPanel>
-
                     <Border Grid.Column="1">
                         <Canvas>
-
                             <Line
                                                       StrokeThickness="4"
                                                       X1="18" Y1="38"
@@ -132,12 +125,8 @@
                                                          Canvas.Top="30"
                                                          Canvas.Left="114"
                                                          />
-
                         </Canvas>
-
-
                     </Border>
-
                     <StackPanel Grid.Column="2"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
@@ -157,7 +146,6 @@
                     </StackPanel>
                 </Grid>
             </Border>
-
             <Border Grid.Column="4"
                                         BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
@@ -176,7 +164,6 @@
                                                TextTrimming="CharacterEllipsis"
                                                />
             </Border>
-
             <Border Grid.Column="5">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -194,8 +181,6 @@
                                                TextTrimming="CharacterEllipsis"
                                                />
             </Border>
-
         </Grid>
     </Border>
-
 </UserControl>

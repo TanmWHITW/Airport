@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media.Animation;
-
 namespace Airport
 {
     /// <summary>
@@ -27,14 +26,11 @@ namespace Airport
                 To = new Thickness(0),
                 DecelerationRatio = decelerationRatio
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
-
         /// <summary>
         /// Adds a slide from left animation to the storyboard
         /// </summary>
@@ -53,14 +49,11 @@ namespace Airport
                 To = new Thickness(0),
                 DecelerationRatio = decelerationRatio
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
-
         /// <summary>
         /// Adds a slide to left animation to the storyboard
         /// </summary>
@@ -79,14 +72,11 @@ namespace Airport
                 To = new Thickness(-offset, 0, keepMargin ? offset : 0, 0),
                 DecelerationRatio = decelerationRatio
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
-
         /// <summary>
         /// Adds a slide to right animation to the storyboard
         /// </summary>
@@ -105,14 +95,11 @@ namespace Airport
                 To = new Thickness(keepMargin ? offset : 0, 0, -offset, 0),
                 DecelerationRatio = decelerationRatio
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
-
         /// <summary>
         /// Adds a fade in animation to the storyboard
         /// </summary>
@@ -127,14 +114,11 @@ namespace Airport
                 From = 0,
                 To = 1,
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Opacity"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }
-
         /// <summary>
         /// Adds a fade out animation to the storyboard
         /// </summary>
@@ -149,10 +133,8 @@ namespace Airport
                 From = 1,
                 To = 0,
             };
-
             // Set the target property name
             Storyboard.SetTargetProperty(animation, new PropertyPath("Opacity"));
-
             // Add this to the storyboard
             storyboard.Children.Add(animation);
         }

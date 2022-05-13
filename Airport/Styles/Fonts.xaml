@@ -2,37 +2,27 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Airport" 
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-
     <FontFamily x:Key="MontserratRegular">pack:://application;,,,/Fonts/#Montserrat Regular</FontFamily>
     <FontFamily x:Key="MontserratRegularItalic">pack:://application;,,,/Fonts/#Montserrat Italic</FontFamily>
-
     <FontFamily x:Key="MontserratThin">pack:://application;,,,/Fonts/#Montserrat Thin</FontFamily>
     <FontFamily x:Key="MontserratThinItalic">pack:://application;,,,/Fonts/#Montserrat Thin Italic</FontFamily>
-
     <FontFamily x:Key="MontserratSemiBold">pack:://application;,,,/Fonts/#Montserrat SemiBold</FontFamily>
     <FontFamily x:Key="MontserratSemiBoldItalic">pack:://application;,,,/Fonts/#Montserrat SemiBold Italic</FontFamily>
-
     <FontFamily x:Key="MontserratBold">pack:://application;,,,/Fonts/#Montserrat Bold</FontFamily>
     <FontFamily x:Key="MontserratBoldItalic">pack:://application;,,,/Fonts/#Montserrat Bold Italic</FontFamily>
-
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
     </Style>
-
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
         <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
     </Style>
-
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
     <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}" />
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}" />
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
-
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
-
     <system:Double x:Key="FontSizeRegular">18</system:Double>
     <system:Double x:Key="FontSizeMedium">24</system:Double>
     <system:Double x:Key="FontSizeLarge">30</system:Double>
     <system:Double x:Key="FontSizeXL">50</system:Double>
-
 </ResourceDictionary>

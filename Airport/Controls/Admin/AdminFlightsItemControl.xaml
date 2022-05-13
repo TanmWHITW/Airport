@@ -6,8 +6,6 @@
              xmlns:local="clr-namespace:Airport"
              mc:Ignorable="d" 
              d:DesignHeight="90" d:DesignWidth="900">
-
-
     <Border CornerRadius="10"
             x:Name="background"
             d:DataContext="{x:Static local:AdminFlightsItemDesignModel.Instance}">
@@ -16,14 +14,12 @@
         </Border.Background>
         <Grid Background="Transparent">
             <Grid.ColumnDefinitions>
-                
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="2*" MaxWidth="200"/>
                 <ColumnDefinition Width="1*" MinWidth="600"/>
                 <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-
             <Border BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -50,7 +46,6 @@
                 </Border.BorderBrush>
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
-
                     <TextBlock Padding="5 0"
                                                Text="{Binding Plane}" 
                                                FontFamily="{StaticResource MontserratRegular}"
@@ -70,7 +65,6 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-
             <Border Grid.Column="2"
                                         BorderThickness="0 0 1 0">
                 <Border.BorderBrush>
@@ -81,7 +75,6 @@
                     </LinearGradientBrush>
                 </Border.BorderBrush>
                 <Grid>
-                    
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
@@ -94,7 +87,6 @@
                                 CornerRadius="10"
                                 Padding="25 4">
                                 <StackPanel>
-
                                     <TextBlock Text="{Binding DepartureCity}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
@@ -105,11 +97,9 @@
                                                        />
                                 </StackPanel>
                             </Border>
-
                             <TextBlock Text="{Binding DepartureDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                       Margin="0 5 0 0" />
-
                         </StackPanel>
                     </Border>
                     <Border
@@ -123,7 +113,6 @@
                                 Padding="25 4"
                                 Width="200">
                                 <StackPanel>
-
                                     <TextBlock Text="{Binding ArrivalCity}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
@@ -134,15 +123,12 @@
                                                        />
                                 </StackPanel>
                             </Border>
-
                             <TextBlock Text="{Binding ArrivalDateTime, Converter={local:AdminTimeToDisplayTimeConverter}, ConverterParameter=True}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                        Margin="0 5 0 0"
                                                        />
-
                         </StackPanel>
                     </Border>
-
                     <Border>
                         <StackPanel TextBlock.TextAlignment="Center" 
                                 HorizontalAlignment="Left">
@@ -151,7 +137,6 @@
                                 CornerRadius="10"
                                 Padding="25 4">
                                 <StackPanel>
-
                                     <TextBlock Text="{Binding DepartureCity}" 
                                                        FontFamily="{StaticResource MontserratBold}"
                                                        FontSize="{StaticResource FontSizeRegular}"
@@ -162,14 +147,11 @@
                                                        />
                                 </StackPanel>
                             </Border>
-                            
                             <TextBlock Text="{Binding ArrivingToDepartureCityDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
                                                        FontFamily="{StaticResource MontserratRegular}"
                                                       Margin="0 5 0 0" />
-
                         </StackPanel>
                     </Border>
-
                 </StackPanel>
                     <Canvas Width="300"
                             Panel.ZIndex="2"
@@ -178,7 +160,6 @@
                             Margin="0 0 0 20">
                         <Path  Fill="{StaticResource MainYellowBrush}" Data="M 0 0 L 10 10 L 0 20 Z" Margin="29 -8"/>
                         <Path  Fill="{StaticResource MainYellowBrush}" Data="M 0 0 L 10 10 L 0 20 Z" Margin="263 -8"/>
-
                     </Canvas>
                 </Grid>
             </Border>
@@ -200,7 +181,6 @@
                                                TextTrimming="CharacterEllipsis"
                                                />
             </Border>
-
             <Border Grid.Column="4">
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -214,8 +194,6 @@
                           VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
             </Border>
-                    
         </Grid>
     </Border>
-
 </UserControl>

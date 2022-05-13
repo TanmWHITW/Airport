@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Airport.NET
 {
     /// <summary>
@@ -23,7 +22,6 @@ namespace Airport.NET
         {
             return lamba.Compile().Invoke();
         }
-
         /// <summary>
         /// Sets the underlying properties value to the given value
         /// from an expression that contains the property
@@ -35,14 +33,11 @@ namespace Airport.NET
         {
             // Converts a lamba () => some.Property, to some.Property
             var expression = (lamba as LambdaExpression).Body as MemberExpression;
-
             // Get the property information so we can set it
             var propertyInfo = (PropertyInfo)expression.Member;
             var target = Expression.Lambda(expression.Expression).Compile().DynamicInvoke();
-
             // Set the property value
             propertyInfo.SetValue(target, value);
-
         }
     }
 }

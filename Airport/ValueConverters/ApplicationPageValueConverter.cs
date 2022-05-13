@@ -2,7 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
-
 namespace Airport
 {
     class ApplicationPageValueConverter : BaseValueConverter<ApplicationPageValueConverter>
@@ -11,22 +10,17 @@ namespace Airport
         {
             switch((ApplicationPage)value)
             {
-
                 case ApplicationPage.AdminLogin:
                     return new AdminLoginPage();
-
                 case ApplicationPage.UserFlights:
                     return new UserFlightsPage();
-
                 case ApplicationPage.AdminFlights:
                     return new AdminFlightsPage();
-
                 default:
                     Debugger.Break();
                     return null;
             }
         }
-
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

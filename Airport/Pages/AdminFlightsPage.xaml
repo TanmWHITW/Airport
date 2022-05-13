@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="1600" d:DesignWidth="1900"
       Title="AdminFlightsPage">
-
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -28,14 +27,11 @@
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource ForegroundWhite}" Opacity="0.6" />
                 </Border.Background>
-
                 <Grid >
-
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -46,7 +42,6 @@
                            Foreground="{StaticResource ForegroundGreyDarkBrush}"
                            FontFamily="{StaticResource MontserratBold}"
                                        Margin="20 15 20 0"/>
-
                         <ComboBox ItemsSource="{Binding Planes}"
                                       DisplayMemberPath="PlaneWithId"
                                       SelectedItem="{Binding Plane}"
@@ -67,14 +62,12 @@
                                  />
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-
                         <TextBox Style="{StaticResource SearchTextBox}" 
                                  Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
                                  MaxLength="4"
                                  Tag="Введите номер рейса" HorizontalAlignment="Stretch"
                                  FontSize="{StaticResource FontSizeRegular}"
                                  />
-
                         <TextBox Style="{StaticResource SearchTextBox}" 
                              Text="{Binding DepartureDateTime, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Введите время вылета (ДД:ММ:ГГГГ чч:мм)" HorizontalAlignment="Stretch"                     
@@ -86,7 +79,6 @@
                              Tag="Введите количество пассажиров" HorizontalAlignment="Stretch"
                              />
                     </StackPanel>
-
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Right"
                                 Grid.Row="1"
@@ -107,7 +99,6 @@
                     </StackPanel>
                 </Grid>
             </Border>
-
         </StackPanel>
         <local:AdminFlightsListControl Grid.Row="1"
                                        DataContext="{Binding}"/>

@@ -6,7 +6,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-
 namespace Airport
 {
     /// <summary>
@@ -17,9 +16,7 @@ namespace Airport
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             IoC.Setup();
-
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
         }
