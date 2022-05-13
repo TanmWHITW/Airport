@@ -149,25 +149,18 @@ namespace Airport
        
         public void SearchFlights()
         {
+            if (mLastSearchText == SearchText)
+                return;
             // If we have no search text, or no items
             if (string.IsNullOrEmpty(SearchText) || Items == null || Items.Count() <= 0)
             {
                 // Make filtered list the same
 
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
+                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems ?? Enumerable.Empty<UserFlightsItemViewModel>());
 
                 // Set last search text
                 mLastSearchText = SearchText;
 
-                return;
-            }
-            if (DateTime.TryParse(SearchText.Substring(0, 1), out _))
-            {
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
-                    Items.Where(item => item.DepartureDateTime.ToString().Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)));
-
-                // Set last search text
-                mLastSearchText = SearchText;
                 return;
             }
             if (DateTime.TryParse(SearchText, out _))
@@ -179,7 +172,16 @@ namespace Airport
                 mLastSearchText = SearchText;
                 return;
             }
+            if(Items.Any(item => item.Id.Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)))
+            {
+                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
+                    Items.Where(item => item.Id.Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)));
 
+                // Set last search text
+                mLastSearchText = SearchText;
+
+                return;
+            }
             if(Items.Any(item => item.Plane.Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)))
             {
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
@@ -189,12 +191,6 @@ namespace Airport
                 mLastSearchText = SearchText;
                 return;
             }
-
-            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(
-                Items.Where(item => item.Id.Contains(SearchText) && item.DepartureDateTime.Date.Equals(CurrentDate.Date)));
-
-            // Set last search text
-            mLastSearchText = SearchText;
         }
 
         public void SearchFlightPreviousDate()
