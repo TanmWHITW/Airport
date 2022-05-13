@@ -16,7 +16,7 @@ namespace Airport
         public string Id { get; set; }
         public PlanesItemViewModel Plane { get; set; }
         public string DepartureDateTime { get; set; }
-        public CitiesItemViewModel City { get; set; } = null;
+        public CitiesItemViewModel City { get; set; }
         public string Passengers { get; set; }
         public ObservableCollection<AdminFlightsItemViewModel> Items
         {
@@ -30,7 +30,8 @@ namespace Airport
                 mItems = value;
             }
         }
-        public List<CitiesItemViewModel> Cities { get; set; } = new List<CitiesItemViewModel> {
+
+        public List<CitiesItemViewModel> Сities = new List<CitiesItemViewModel> {
             new CitiesItemViewModel
             {
                 City = "Абакан",
@@ -515,6 +516,7 @@ namespace Airport
                 TimeZoneDifference = TimeSpan.Parse("00:00:00")
             }
         };
+
         public List<PlanesItemViewModel> Planes { get; set; } = new List<PlanesItemViewModel> {
             new PlanesItemViewModel
             {

@@ -123,7 +123,7 @@ namespace Airport
             if (string.IsNullOrEmpty(SearchText) || Items == null || Items.Count() <= 0)
             {
                 // Make filtered list the same
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(FilteredItems ?? Enumerable.Empty<UserFlightsItemViewModel>());
+                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Enumerable.Empty<UserFlightsItemViewModel>());
                 // Set last search text
                 mLastSearchText = SearchText;
                 return;
@@ -152,6 +152,7 @@ namespace Airport
                 mLastSearchText = SearchText;
                 return;
             }
+            FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Enumerable.Empty<UserFlightsItemViewModel>());
         }
         public void SearchFlightPreviousDate()
         {
@@ -160,7 +161,6 @@ namespace Airport
             {
                 // Make filtered list the same
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => item.DepartureDateTime.Date.Equals(PreviousDate.Date)));
                 return;
             }
             // Find all items that contain the chosen Date
@@ -175,7 +175,6 @@ namespace Airport
             {
                 // Make filtered list the same
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => item.DepartureDateTime.Date.Equals(CurrentDate.Date)));
                 return;
             }
             // Find all items that contain the chosen Date
@@ -188,12 +187,11 @@ namespace Airport
             {
                 // Make filtered list the same
                 FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items ?? Enumerable.Empty<UserFlightsItemViewModel>());
-                FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => item.DepartureDateTime.Date.Equals(NextDate.Date)));
                 return;
             }
             // Find all items that contain the chosen Date
             FilteredItems = new ObservableCollection<UserFlightsItemViewModel>(Items.Where(item => item.DepartureDateTime.Date.Equals(NextDate.Date)));
-            CurrentDate = CurrentDate + TimeSpan.FromDays(1);
+            CurrentDate += TimeSpan.FromDays(1);
             ClearSearch();
         }
         /// <summary>
@@ -207,10 +205,7 @@ namespace Airport
                 SearchText = string.Empty;
             SetupTodayFlights();
         }
-        public void Logout()
-        {
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
-        }
+        public void Logout() => IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.AdminLogin);
         #region Private Helpers
         private void LoadData(string path)
         {

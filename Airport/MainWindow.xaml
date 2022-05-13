@@ -131,7 +131,6 @@
                DataContext="{Binding ApplicationViewModel.CurrentPage,
                          Source={x:Static local:ViewModelLocator.Instance}, 
                          Converter={local:ApplicationPageValueConverter}}" 
-               CurrentPage="{Binding}"
-               />
+               CurrentPage="{Binding}"/>
     </Grid>
 </Window>

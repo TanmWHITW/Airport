@@ -98,8 +98,8 @@
                                 </StackPanel>
                             </Border>
                             <TextBlock Text="{Binding DepartureDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
-                                                       FontFamily="{StaticResource MontserratRegular}"
-                                                      Margin="0 5 0 0" />
+                                       FontFamily="{StaticResource MontserratRegular}"
+                                       Margin="0 5 0 0" />
                         </StackPanel>
                     </Border>
                     <Border
@@ -124,9 +124,8 @@
                                 </StackPanel>
                             </Border>
                             <TextBlock Text="{Binding ArrivalDateTime, Converter={local:AdminTimeToDisplayTimeConverter}, ConverterParameter=True}" 
-                                                       FontFamily="{StaticResource MontserratRegular}"
-                                       Margin="0 5 0 0"
-                                                       />
+                                       FontFamily="{StaticResource MontserratRegular}"
+                                       Margin="0 5 0 0"/>
                         </StackPanel>
                     </Border>
                     <Border>
@@ -148,8 +147,8 @@
                                 </StackPanel>
                             </Border>
                             <TextBlock Text="{Binding ArrivingToDepartureCityDateTime, Converter={local:AdminTimeToDisplayTimeConverter}}" 
-                                                       FontFamily="{StaticResource MontserratRegular}"
-                                                      Margin="0 5 0 0" />
+                                       FontFamily="{StaticResource MontserratRegular}"
+                                       Margin="0 5 0 0" />
                         </StackPanel>
                     </Border>
                 </StackPanel>
